@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 10f;           // Movement speed
-    public float flySpeed = 10f;            // Fly up/down speed
+    public float moveSpeed = 0.05f;           // Movement speed
+    public float flySpeed = 0.05f;            // Fly up/down speed
     public float rotationSpeed = 0.05f;       // Rotation speed for left/right
     public float pitchSpeed = 0.05f;          // Rotation speed for up/down (camera)
 
-    public Transform cameraTransform;       // Reference to the camera's Transform
-    private float pitch = 0f;               // Track camera pitch (up/down)
+    public Transform cameraTransform;         // Reference to the camera's Transform
+    private float pitch = 0f;                 // Track camera pitch (up/down)
 
     private void Update()
     {
         // Movement along X and Z axes (WASD)
-        float moveX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;  // A/D or Left/Right
-        float moveZ = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;    // W/S or Up/Down
-        transform.Translate(new Vector3(moveX, 0, moveZ));
+        float moveX = Input.GetAxis("Horizontal") * moveSpeed;   // A/D or Left/Right
+        float moveZ = Input.GetAxis("Vertical") * moveSpeed;     // W/S or Up/Down
+        transform.Translate(new Vector3(moveX * Time.deltaTime, 0, moveZ * Time.deltaTime));
 
         // Fly up/down (Q/E)
         if (Input.GetKey(KeyCode.Q))
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Check if left mouse button is pressed
-        if (Input.GetMouseButton(0))  // 0 = left mouse button
+        if (Input.GetMouseButton(0))  // 0 == left mouse button
         {
             float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 100f;
             float rotateX = Input.GetAxis("Mouse Y") * pitchSpeed * 100f;
