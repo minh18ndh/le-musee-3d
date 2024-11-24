@@ -4,8 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;           // Movement speed
     public float flySpeed = 10f;            // Fly up/down speed
-    public float rotationSpeed = 10f;       // Rotation speed for left/right
-    public float pitchSpeed = 10f;          // Rotation speed for up/down (camera)
+    public float rotationSpeed = 0.05f;       // Rotation speed for left/right
+    public float pitchSpeed = 0.05f;          // Rotation speed for up/down (camera)
 
     public Transform cameraTransform;       // Reference to the camera's Transform
     private float pitch = 0f;               // Track camera pitch (up/down)
@@ -30,17 +30,18 @@ public class PlayerController : MonoBehaviour
         // Check if left mouse button is pressed
         if (Input.GetMouseButton(0))  // 0 = left mouse button
         {
+            float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 100f;
+            float rotateX = Input.GetAxis("Mouse Y") * pitchSpeed * 100f;
+
             // Rotate player to left/right with mouse (about Y-axis)
-            float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 5000f * Time.deltaTime;
             transform.Rotate(0, rotateY, 0);
 
             // Rotate player's camera ("eyes") up/down with mouse (about X-axis)
-            pitch -= Input.GetAxis("Mouse Y") * pitchSpeed * 5000f * Time.deltaTime;
+            pitch -= rotateX;
             pitch = Mathf.Clamp(pitch, -50f, 40f);  // Limit up/down rotation to avoid flipping
 
             // Apply the pitch to camera
             cameraTransform.localRotation = Quaternion.Euler(pitch, 0, 0);
-            //Debug.Log("Camera Rotation in Quaternion format: " + cameraTransform.localRotation);
         }
     }
 }
