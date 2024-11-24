@@ -31,11 +31,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButton(0))  // 0 = left mouse button
         {
             // Rotate player to left/right with mouse (about Y-axis)
-            float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 500f * Time.deltaTime;
+            float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 5000f * Time.deltaTime;
             transform.Rotate(0, rotateY, 0);
 
             // Rotate player's camera ("eyes") up/down with mouse (about X-axis)
-            pitch -= Input.GetAxis("Mouse Y") * pitchSpeed * 500f * Time.deltaTime;
+            pitch -= Input.GetAxis("Mouse Y") * pitchSpeed * 5000f * Time.deltaTime;
             pitch = Mathf.Clamp(pitch, -50f, 40f);  // Limit up/down rotation to avoid flipping
 
             // Apply the pitch to camera

@@ -273,8 +273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   flySpeed: 10
-  rotationSpeed: 10
-  pitchSpeed: 10
+  rotationSpeed: 0.5
+  pitchSpeed: 0.5
   cameraTransform: {fileID: 1516053338}
 --- !u!1 &381060924 stripped
 GameObject:
