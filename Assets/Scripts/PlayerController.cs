@@ -2,32 +2,45 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 0.05f;           // Movement speed
-    public float flySpeed = 0.05f;            // Fly up/down speed
+    public float moveSpeed = 10f;             // Movement speed
+    public float flySpeed = 10f;              // Fly up/down speed
     public float rotationSpeed = 0.05f;       // Rotation speed for left/right
     public float pitchSpeed = 0.05f;          // Rotation speed for up/down (camera)
 
     public Transform cameraTransform;         // Reference to the camera's Transform
     private float pitch = 0f;                 // Track camera pitch (up/down)
 
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>(); 
+    }
+
     private void Update()
     {
-        // Movement along X and Z axes (WASD)
-        float moveX = Input.GetAxis("Horizontal") * moveSpeed;   // A/D or Left/Right
-        float moveZ = Input.GetAxis("Vertical") * moveSpeed;     // W/S or Up/Down
-        transform.Translate(new Vector3(moveX * Time.deltaTime, 0, moveZ * Time.deltaTime));
+        // Get player input for movement (WASD)
+        float moveX = Input.GetAxis("Horizontal") * moveSpeed;  // A/D or Left/Right
+        float moveZ = Input.GetAxis("Vertical") * moveSpeed;    // W/S or Up/Down
+
+        // Calculate movement direction based on the player's local orientation
+        Vector3 moveDirection = transform.right * moveX + transform.forward * moveZ;
+
+        // Update velocity for movement
+        Vector3 velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
+        rb.velocity = velocity;
 
         // Fly up/down (Q/E)
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Translate(Vector3.up * flySpeed * Time.deltaTime);
+            rb.velocity = new Vector3(rb.velocity.x, flySpeed, rb.velocity.z);  
         }
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Translate(Vector3.down * flySpeed * Time.deltaTime);
+            rb.velocity = new Vector3(rb.velocity.x, -flySpeed, rb.velocity.z);  
         }
 
-        // Check if left mouse button is pressed
+        // Camera and player rotation (mouse input)
         if (Input.GetMouseButton(0))  // 0 == left mouse button
         {
             float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 100f;
