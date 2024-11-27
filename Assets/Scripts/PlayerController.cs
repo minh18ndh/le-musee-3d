@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;            // Movement speed
-    public float flySpeed = 3f;              // Fly up/down speed
+    public float flySpeed = 10f;             // Fly up/down speed
     public float rotationSpeed = .05f;       // Rotation speed for left/right
     public float pitchSpeed = .05f;          // Rotation speed for up/down (camera)
 
@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float bobAmount = .08f;
     private float timer = 0;
     private Vector3 headOriginalPos;
+    private bool verticalMovement;
 
     private Rigidbody rb;
     private AudioSource footsteps;
@@ -23,10 +24,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>(); 
         footsteps = GetComponent<AudioSource>();
         headOriginalPos = head.localPosition;
-    }
+}
 
     private void Update()
     {
+        verticalMovement = Input.GetKey(KeyCode.Space);
+
         Movement();
 
 	    View();
@@ -49,14 +52,10 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.z * moveSpeed);
         rb.velocity = velocity;
 
-        // Fly up/down (Q/E)
-        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.Space))
+        // Fly up
+        if (Input.GetKey(KeyCode.Space))
         {
             rb.velocity = new Vector3(rb.velocity.x, flySpeed, rb.velocity.z);  
-        }
-        if (Input.GetKey(KeyCode.E))
-        {
-            rb.velocity = new Vector3(rb.velocity.x, -flySpeed, rb.velocity.z);  
         }
     }
     
@@ -80,22 +79,36 @@ public class PlayerController : MonoBehaviour
     
     private void HeadBob()
     {
-        if ((rb.velocity.x != 0) || (rb.velocity.z != 0))
+        if (!verticalMovement)
         {
-            timer += Time.deltaTime * bobSpeed;
+            if (rb.velocity.x != 0 || rb.velocity.z != 0)
+            {
+                timer += Time.deltaTime * bobSpeed;
        
-            // Applies HeadBob movement
-            head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y + Mathf.Sin(timer) * bobAmount, headOriginalPos.z);
+                // Applies HeadBob movement
+                head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y + Mathf.Sin(timer) * bobAmount, headOriginalPos.z);
+            }
+        }
+        else
+        {
+            timer = 0;
         }
     }
     
     private void Footsteps()
     {
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        if (!verticalMovement)
         {
-            if (!footsteps.isPlaying)
-            {  	
-                footsteps.Play();
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                if (!footsteps.isPlaying)
+                {
+                    footsteps.Play();
+                }
+            }
+            else
+            {
+                footsteps.Stop();
             }
         }
         else
