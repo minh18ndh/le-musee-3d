@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        verticalMovement = Input.GetKey(KeyCode.Space);
+        verticalMovement = Input.GetKeyDown(KeyCode.Space);
 
         Movement();
 
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = velocity;
 
         // Fly up
-        if (Input.GetKey(KeyCode.Space))
+        if (verticalMovement)
         {
             rb.velocity = new Vector3(rb.velocity.x, flySpeed, rb.velocity.z);  
         }
