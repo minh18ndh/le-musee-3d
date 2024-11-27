@@ -7,14 +7,14 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = .05f;       // Rotation speed for left/right
     public float pitchSpeed = .05f;          // Rotation speed for up/down (camera)
 
-    public Transform head;         	    // Reference to the camera's Transform
+    public Transform head;         	         // Reference to the camera's Transform
     private float pitch = 0f;                // Track camera pitch (up/down)
     
     public float bobSpeed = 10f;
     public float bobAmount = .08f;
-    private Vector3 headOriginalPos;
     private float timer = 0;
-    
+    private Vector3 headOriginalPos;
+
     private Rigidbody rb;
     private AudioSource footsteps;
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
 
-	View();
+	    View();
         
         HeadBob();
         
