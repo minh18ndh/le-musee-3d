@@ -27,7 +27,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Get player input for movement (WASD)
+        Movement();
+
+	View();
+        
+        HeadBob();
+        
+        Footsteps();
+        
+    }
+    
+    private void Movement()
+    {
         float moveX = Input.GetAxis("Horizontal");    // A/D or Left/Right
         float moveZ = Input.GetAxis("Vertical");      // W/S or Up/Down
 
@@ -47,8 +58,10 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, -flySpeed, rb.velocity.z);  
         }
-
-        // Camera and player rotation (mouse input)
+    }
+    
+    private void View()
+    {
         if (Input.GetMouseButton(0))  // 0 == left mouse button
         {
             float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 100f;
@@ -63,8 +76,10 @@ public class PlayerController : MonoBehaviour
 
             head.localRotation = Quaternion.Euler(pitch, 0, 0);
         }
-        
-        // Head bob
+    }
+    
+    private void HeadBob()
+    {
         if ((rb.velocity.x != 0) || (rb.velocity.z != 0))
         {
             timer += Time.deltaTime * bobSpeed;
@@ -72,8 +87,10 @@ public class PlayerController : MonoBehaviour
             // Applies HeadBob movement
             head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y + Mathf.Sin(timer) * bobAmount, headOriginalPos.z);
         }
-        
-        // Footsteps sound
+    }
+    
+    private void Footsteps()
+    {
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             if (!footsteps.isPlaying)
@@ -81,7 +98,7 @@ public class PlayerController : MonoBehaviour
                 footsteps.Play();
             }
         }
-        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+        else
         {
             footsteps.Stop();
         }
