@@ -16,10 +16,12 @@ public class PlayerController : MonoBehaviour
     private float timer = 0;
     
     private Rigidbody rb;
+    private AudioSource footsteps;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>(); 
+        footsteps = GetComponent<AudioSource>();
         headOriginalPos = head.localPosition;
     }
 
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
             head.localRotation = Quaternion.Euler(pitch, 0, 0);
         }
         
+        // Head bob
         if ((rb.velocity.x != 0) || (rb.velocity.z != 0))
         {
             timer += Time.deltaTime * bobSpeed;
@@ -69,5 +72,18 @@ public class PlayerController : MonoBehaviour
             // Applies HeadBob movement
             head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y + Mathf.Sin(timer) * bobAmount, headOriginalPos.z);
         }
-     }
+        
+        // Footsteps sound
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            if (!footsteps.isPlaying)
+            {  	
+                footsteps.Play();
+            }
+        }
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+        {
+            footsteps.Stop();
+        }
+    }
 }
