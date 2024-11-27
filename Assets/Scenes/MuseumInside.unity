@@ -275,7 +275,8 @@ MonoBehaviour:
   flySpeed: 3
   rotationSpeed: 0.05
   pitchSpeed: 0.05
-  cameraTransform: {fileID: 1516053338}
+  head: {fileID: 1516053338}
+  bobSpeed: 10
 --- !u!1 &1516053337
 GameObject:
   m_ObjectHideFlags: 0

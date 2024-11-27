@@ -2,19 +2,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 10f;             // Movement speed
-    public float flySpeed = 3f;               // Fly up/down speed
-    public float rotationSpeed = 0.05f;       // Rotation speed for left/right
-    public float pitchSpeed = 0.05f;          // Rotation speed for up/down (camera)
+    public float moveSpeed = 10f;            // Movement speed
+    public float flySpeed = 3f;              // Fly up/down speed
+    public float rotationSpeed = .05f;       // Rotation speed for left/right
+    public float pitchSpeed = .05f;          // Rotation speed for up/down (camera)
 
-    public Transform cameraTransform;         // Reference to the camera's Transform
-    private float pitch = 0f;                 // Track camera pitch (up/down)
-
+    public Transform head;         	    // Reference to the camera's Transform
+    private float pitch = 0f;                // Track camera pitch (up/down)
+    
+    public float bobSpeed = 10f;
+    public float bobAmount = .08f;
+    private Vector3 headOriginalPos;
+    private float timer = 0;
+    
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>(); 
+        headOriginalPos = head.localPosition;
     }
 
     private void Update()
@@ -53,7 +59,15 @@ public class PlayerController : MonoBehaviour
             pitch -= rotateX;
             pitch = Mathf.Clamp(pitch, -50f, 40f);  // Limit up/down rotation to avoid flipping
 
-            cameraTransform.localRotation = Quaternion.Euler(pitch, 0, 0);
+            head.localRotation = Quaternion.Euler(pitch, 0, 0);
         }
-    }
+        
+        if ((rb.velocity.x != 0) || (rb.velocity.z != 0))
+        {
+            timer += Time.deltaTime * bobSpeed;
+       
+            // Applies HeadBob movement
+            head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y + Mathf.Sin(timer) * bobAmount, headOriginalPos.z);
+        }
+     }
 }
