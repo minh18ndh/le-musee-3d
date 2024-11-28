@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = .05f;       // Rotation speed for left/right
     public float pitchSpeed = .05f;          // Rotation speed for up/down (camera)
 
-    public Transform head;         	         // Reference to the camera's Transform
+    public Transform head;         	    // Reference to the camera's Transform
     private float pitch = 0f;                // Track camera pitch (up/down)
     
     public float bobSpeed = 10f;
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private float timer = 0;
     private Vector3 headOriginalPos;
     private bool verticalMovement;
+    private bool onFoot;
 
     private Rigidbody rb;
     private AudioSource footsteps;
@@ -32,12 +33,24 @@ public class PlayerController : MonoBehaviour
 
         Movement();
 
-	    View();
+        View();
         
         HeadBob();
         
         Footsteps();
         
+    }
+    
+    private void OnTriggerEnter(Collider feet)
+    {
+        Debug.Log("Touch ground");
+        onFoot = true;
+    }
+    
+    private void OnTriggerExit(Collider feet)
+    {
+        Debug.Log("No touch");
+        onFoot = false;
     }
     
     private void Movement()
@@ -81,7 +94,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!verticalMovement)
         {
-            if (rb.velocity.x != 0 || rb.velocity.z != 0)
+            if ((rb.velocity.x != 0 || rb.velocity.z != 0) && onFoot)
             {
                 timer += Time.deltaTime * bobSpeed;
        
@@ -99,7 +112,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!verticalMovement)
         {
-            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && onFoot)
             {
                 if (!footsteps.isPlaying)
                 {
@@ -116,4 +129,6 @@ public class PlayerController : MonoBehaviour
             footsteps.Stop();
         }
     }
+    
+    
 }

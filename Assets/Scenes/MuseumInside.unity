@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 214312975}
   - component: {fileID: 214312976}
   - component: {fileID: 214312977}
+  - component: {fileID: 214312978}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -226,7 +227,7 @@ Transform:
   m_GameObject: {fileID: 214312970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9429, y: -12.5, z: -40.8553}
+  m_LocalPosition: {x: -1.51, y: -7.74, z: -40.8553}
   m_LocalScale: {x: 3.6, y: 3.6, z: 3.6}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -375,6 +376,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &214312978
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214312970}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 2.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &249793000
 GameObject:
   m_ObjectHideFlags: 0
