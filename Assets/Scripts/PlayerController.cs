@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = .05f;       // Rotation speed for left/right
     public float pitchSpeed = .05f;          // Rotation speed for up/down (camera)
 
-    public Transform head;         	    // Reference to the camera's Transform
+    public Transform head;         	         // Reference to the camera's Transform
     private float pitch = 0f;                // Track camera pitch (up/down)
     
     public float bobSpeed = 10f;
@@ -41,16 +41,19 @@ public class PlayerController : MonoBehaviour
         
     }
     
-    private void OnTriggerEnter(Collider feet)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Touch ground");
+        Debug.Log("Enter " + other.gameObject.name);
         onFoot = true;
     }
-    
-    private void OnTriggerExit(Collider feet)
+
+    private void OnTriggerExit(Collider other)
     {
-        Debug.Log("No touch");
-        onFoot = false;
+        Debug.Log("Exit " + other.gameObject.name);
+        if (other.gameObject.name == "Floor")   // Set to false only when exit floor
+        {
+            onFoot = false;
+        }
     }
     
     private void Movement()
@@ -128,7 +131,5 @@ public class PlayerController : MonoBehaviour
         {
             footsteps.Stop();
         }
-    }
-    
-    
+    }  
 }
