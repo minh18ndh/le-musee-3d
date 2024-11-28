@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 10f;            // Movement speed
-    public float flySpeed = 10f;             // Fly up/down speed
+    public float moveSpeed = 10f;  
+    public float flySpeed = 10f;      
     public float rotationSpeed = .05f;       // Rotation speed for left/right
     public float pitchSpeed = .05f;          // Rotation speed for up/down (camera)
-
-    public Transform head;         	         // Reference to the camera's Transform
     private float pitch = 0f;                // Track camera pitch (up/down)
+
+    public Transform head;   
     
     public float bobSpeed = 10f;
     public float bobAmount = .08f;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>(); 
         footsteps = GetComponent<AudioSource>();
         headOriginalPos = head.localPosition;
-}
+    }
 
     private void Update()
     {
@@ -61,10 +61,10 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");    // A/D or Left/Right
         float moveZ = Input.GetAxis("Vertical");      // W/S or Up/Down
 
-        // Calculate movement direction based on the player's local orientation
+        // Calculate movement direction based on player's local orientation
         Vector3 moveDirection = transform.right * moveX + transform.forward * moveZ;
 
-        // Update velocity for movement
+        // Update velocity
         Vector3 velocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.z * moveSpeed);
         rb.velocity = velocity;
 
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 100f;
             float rotateX = Input.GetAxis("Mouse Y") * pitchSpeed * 100f;
 
-            // About Y-axis
+            // Rotate about Y-axis
             transform.Rotate(0, rotateY, 0);
 
             // Rotate player's camera ("eyes") (about X-axis)
@@ -95,14 +95,30 @@ public class PlayerController : MonoBehaviour
     
     private void HeadBob()
     {
-        if (!verticalMovement)
+        if (!verticalMovement)  // Jump => no head bob
         {
-            if ((rb.velocity.x != 0 || rb.velocity.z != 0) && onFoot)
+            if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && onFoot)  // Horizontal-plane movement detected and contact with ground
             {
                 timer += Time.deltaTime * bobSpeed;
        
-                // Applies HeadBob movement
+                // Apply HeadBob movement
                 head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y + Mathf.Sin(timer) * bobAmount, headOriginalPos.z);
+            }
+            else  // Return to original head position when stand still
+            {
+                if (head.localPosition.y == headOriginalPos.y)
+                {
+                    head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y, headOriginalPos.z);
+                }
+                else
+                {
+                    // Gradually return to headOriginalPos.y
+                    float smoothSpeed = 2f; 
+                    head.localPosition = new Vector3(
+                        headOriginalPos.x,
+                        Mathf.Lerp(head.localPosition.y, headOriginalPos.y, Time.deltaTime * smoothSpeed),
+                        headOriginalPos.z);
+                }
             }
         }
         else
@@ -113,9 +129,9 @@ public class PlayerController : MonoBehaviour
     
     private void Footsteps()
     {
-        if (!verticalMovement)
+        if (!verticalMovement)  // Jump => no footsteps
         {
-            if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && onFoot)
+            if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && onFoot)  // Horizontal-plane movement detected and contact with ground
             {
                 if (!footsteps.isPlaying)
                 {
