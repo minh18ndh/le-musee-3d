@@ -1,6 +1,7 @@
+using UnityEditor;
 using UnityEngine;
 
-[ExecuteInEditMode] // Runs in Edit and Play mode
+[ExecuteAlways] // Runs in Edit and Play mode
 public class Display2DPainting : MonoBehaviour
 {
     public Texture painting2D;  // Drag 2D painting here
@@ -31,7 +32,7 @@ public class Display2DPainting : MonoBehaviour
         {
             currentTexture = painting2D; // Update cache
 
-            if (!Application.isPlaying)
+            if (!Application.isPlaying || PrefabUtility.IsPartOfPrefabAsset(this))  // Guarded against Prefab Mode during Play Mode
             {
                 canvas.sharedMaterial.mainTexture = painting2D;  // Avoid material instance
             }

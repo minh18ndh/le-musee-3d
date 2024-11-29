@@ -563,7 +563,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 10, y: 10}
   m_BounceIntensity: 1
@@ -1532,6 +1532,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 228804388}
+    - target: {fileID: 2453181523205102478, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453181523205102478, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453181523205102478, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_SpotAngle
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453181523205102478, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453181523205102478, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3734442893103400203, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Enabled
       value: 1
