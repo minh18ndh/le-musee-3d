@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ApplyDisabilityTypes : MonoBehaviour
+public class ApplyDisabilityType : MonoBehaviour
 {
     public void ExecuteFunction()
     {

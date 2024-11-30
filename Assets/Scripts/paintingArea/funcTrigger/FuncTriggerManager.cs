@@ -2,19 +2,12 @@ using UnityEngine;
 
 public class FuncTriggerManager : MonoBehaviour
 {
-    // (EDIT THIS REGION WHEN ADD NEW FUNCTIONS)
-    #region Prefab for each Function's 3D Button
-    public GameObject depthOfFieldButton, videoButton, audioGuideButton, downloadAssetButton,
-        playAmbientSoundButton, changePaintingStyleButton, editPaintingAttributesButton,
-        applyDisabilityTypesButton;
-    #endregion
-
+    public GameObject[] buttons;
     private bool isPlayerInsideTrigger = false;  // Track if player is inside trigger
-    private bool showButtons = false;
 
     private void Start()
     {
-
+    	SetButtonVisibility(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,8 +15,8 @@ public class FuncTriggerManager : MonoBehaviour
         if (!isPlayerInsideTrigger)
         {
             isPlayerInsideTrigger = true;
+            SetButtonVisibility(true);
             Debug.Log(other.gameObject.name + " entered the trigger area.");
-            showButtons = true;
         }
     }
 
@@ -32,8 +25,17 @@ public class FuncTriggerManager : MonoBehaviour
         if (isPlayerInsideTrigger)
         {
             isPlayerInsideTrigger = false;
+            SetButtonVisibility(false);
             Debug.Log(other.gameObject.name + " exited the trigger area.");
-            showButtons = false;
+        }
+    }
+    
+    // Control button visibility
+    private void SetButtonVisibility(bool visibility)
+    {
+        foreach (var button in buttons)
+        {
+            button.SetActive(visibility);
         }
     }
 }
