@@ -457,7 +457,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 54122bd8f423fda49b761d1e9ea8bbef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -657,7 +657,6 @@ GameObject:
   - component: {fileID: 4799456869260328092}
   - component: {fileID: 5731849601884427203}
   - component: {fileID: 4038762166197255755}
-  - component: {fileID: 2142487902988829517}
   - component: {fileID: 4328216291654528114}
   m_Layer: 0
   m_Name: depthOfField
@@ -752,18 +751,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2142487902988829517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490946327493532652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc9377e0f2cd0541adabe940130542c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4328216291654528114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f65b1f1e1b6014f862f6c5ba84d3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  postProcessingVolume: {fileID: 0}
 --- !u!1 &4711815104518135270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1409,7 @@ GameObject:
   - component: {fileID: 3977572027559218937}
   - component: {fileID: 6420109822751093364}
   - component: {fileID: 2453181523205102478}
+  - component: {fileID: 5043665362457601796}
   m_Layer: 0
   m_Name: artLight
   m_TagString: Untagged
@@ -1471,7 +1460,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 54122bd8f423fda49b761d1e9ea8bbef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1505,7 +1494,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.7798742, g: 0.16921788, b: 0.16921788, a: 1}
-  m_Intensity: 20
+  m_Intensity: 200
   m_Range: 10
   m_SpotAngle: 40
   m_InnerSpotAngle: 3
@@ -1555,6 +1544,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5043665362457601796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7436531544189178345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &8220349567956259758
 GameObject:
   m_ObjectHideFlags: 0

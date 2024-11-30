@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
     
     private void View()
     {
-        if (Input.GetMouseButton(0))  // 0 == left mouse button
+        if (Input.GetMouseButton(1))  // 0 == right mouse button
         {
             float rotateY = Input.GetAxis("Mouse X") * rotationSpeed * 100f;
             float rotateX = Input.GetAxis("Mouse Y") * pitchSpeed * 100f;
