@@ -763,7 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f65b1f1e1b6014f862f6c5ba84d3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postProcessingVolume: {fileID: 0}
+  depthCube: {fileID: 0}
 --- !u!1 &4711815104518135270
 GameObject:
   m_ObjectHideFlags: 0
