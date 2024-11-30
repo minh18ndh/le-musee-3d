@@ -1732,6 +1732,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4328216291654528114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 1020046275}
+    - target: {fileID: 4328216291654528114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 0}
