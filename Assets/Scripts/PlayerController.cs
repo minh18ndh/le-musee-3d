@@ -43,13 +43,11 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter " + other.gameObject.name);
         onFoot = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit " + other.gameObject.name);
         if (other.gameObject.name == "Floor")   // Set to false only when exit floor
         {
             onFoot = false;

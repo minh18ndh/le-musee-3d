@@ -32,7 +32,7 @@ public class Display2DPainting : MonoBehaviour
         {
             currentTexture = painting2D; // Update cache
 
-            if (!Application.isPlaying || PrefabUtility.IsPartOfPrefabAsset(this))  // Guarded against Prefab Mode during Play Mode
+            if (!Application.isPlaying)
             {
                 canvas.sharedMaterial.mainTexture = painting2D;  // Avoid material instance
             }
