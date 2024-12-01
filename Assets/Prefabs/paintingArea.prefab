@@ -514,6 +514,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painting2D: {fileID: 0}
   canvas: {fileID: 1922311721856029045}
+--- !u!1 &2716376100597212717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4276693088394968643}
+  - component: {fileID: 5379575408929608803}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4276693088394968643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716376100597212717}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.258819, z: -0, w: 0.9659259}
+  m_LocalPosition: {x: 27.558985, y: 10.479999, z: 276.98468}
+  m_LocalScale: {x: 0.8714593, y: 1, z: 2.2598865}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5967904061455934401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5379575408929608803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716376100597212717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 404f16aeb24ab7945beb4e9dedeba58a, type: 2}
 --- !u!1 &3080942944763884859
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +726,8 @@ Transform:
   m_LocalPosition: {x: 22, y: -0.25, z: -1}
   m_LocalScale: {x: 0.3, y: 10, z: 0.03}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4276693088394968643}
   m_Father: {fileID: 4151729782320935369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4799456869260328092
@@ -763,7 +813,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f65b1f1e1b6014f862f6c5ba84d3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depthCube: {fileID: 0}
+  globalVolume: {fileID: 5379575408929608803}
+  playerCamera: {fileID: 0}
+  artFrame: {fileID: 3845919931547218195}
 --- !u!1 &4711815104518135270
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +887,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 54122bd8f423fda49b761d1e9ea8bbef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

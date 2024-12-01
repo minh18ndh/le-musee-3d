@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class DepthOfFieldButtonClickHandler : MonoBehaviour
 {
-    private DepthOfField script;
+    private DepthOfField dofScript;
     private bool isClicked;
+    public bool executeFunction;
 
     void Start()
     {
-        script = GetComponent<DepthOfField>();
+        dofScript = GetComponent<DepthOfField>();
         isClicked = false;
+        executeFunction = false;
     }
 
     void OnMouseDown()
@@ -18,13 +20,24 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (isClicked && script != null)
+        executeFunction = !executeFunction;
+
+        if (isClicked && executeFunction && dofScript != null)
         {
-            // Call a method from function script when click
-            script.ExecuteFunction();
+            dofScript.ExecuteFunction();
+        }
+
+        else
+        {
+            dofScript.HaltFunction();
         }
 
         isClicked = false;
+    }
+
+    public void SetExecuteFunction(bool enabled)
+    {
+        executeFunction = enabled;
     }
 }
 

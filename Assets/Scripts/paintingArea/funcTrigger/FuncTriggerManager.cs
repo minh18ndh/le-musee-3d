@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FuncTriggerManager : MonoBehaviour
@@ -5,9 +6,14 @@ public class FuncTriggerManager : MonoBehaviour
     public GameObject[] buttons;
     private bool isPlayerInsideTrigger = false;  // Track if player is inside trigger
 
+    private DepthOfField dofScript;
+    private DepthOfFieldButtonClickHandler dofEnable;
+
     private void Start()
     {
-    	SetButtonVisibility(false);
+        dofScript = GetComponentInChildren<DepthOfField>();
+        dofEnable = GetComponentInChildren<DepthOfFieldButtonClickHandler>();
+        SetButtonVisibility(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,7 +30,11 @@ public class FuncTriggerManager : MonoBehaviour
     {
         if (isPlayerInsideTrigger)
         {
+            dofScript.HaltFunction();
+            dofEnable.SetExecuteFunction(false);
+
             isPlayerInsideTrigger = false;
+
             SetButtonVisibility(false);
             Debug.Log(other.gameObject.name + " exited the trigger area.");
         }
