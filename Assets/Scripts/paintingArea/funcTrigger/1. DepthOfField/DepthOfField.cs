@@ -55,7 +55,7 @@ public class DepthOfField : MonoBehaviour
     {
         if (depthOfField != null)
         {
-            artFrame.localPosition = new Vector3(artFrameOriginalPos.x + 0.2f, artFrameOriginalPos.y, artFrameOriginalPos.z);
+            artFrame.localPosition = new Vector3(artFrameOriginalPos.x + 0.4f, artFrameOriginalPos.y, artFrameOriginalPos.z);
             
             // Perform raycast to find nearest object in front the player
             if (Physics.Raycast(playerCamera.position, playerCamera.forward, out RaycastHit hit, maxFocusDistance))
