@@ -14,16 +14,16 @@ public class DepthOfField : MonoBehaviour
             // Try to get the DepthOfField component from the profile
             if (globalVolume.sharedProfile.TryGet(out depthOfField))
             {
-                Debug.Log("Depth of Field component found in the assigned Global Volume.");
+                Debug.Log("Depth of Field component found in Global Volume.");
             }
             else
             {
-                Debug.LogError("Depth of Field component not found in the Global Volume profile.");
+                Debug.LogError("Depth of Field component not found in Global Volume profile.");
             }
         }
         else
         {
-            Debug.LogError("Global Volume is not assigned or has no Volume Profile.");
+            Debug.LogError("Global Volume not assigned or has no Volume Profile.");
         }
     }
 
@@ -37,7 +37,7 @@ public class DepthOfField : MonoBehaviour
         }
         else
         {
-            Debug.LogError("DepthOfField component is missing.");
+            Debug.LogError("DepthOfField component missing.");
         }
     }
 }
