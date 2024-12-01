@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -47,6 +48,7 @@ public class DepthOfField : MonoBehaviour
     public void HaltFunction()
     {
         ResetDepthOfField();
+        Debug.Log("Depth of Field adjustment deactivated.");
     }
 
     private void AdjustDepthOfField()
@@ -69,8 +71,6 @@ public class DepthOfField : MonoBehaviour
 
     public void ResetDepthOfField()
     {
-        Debug.Log("Depth of Field adjustment deactivated.");
-
         artFrame.localPosition = artFrameOriginalPos;
 
         if (depthOfField != null)

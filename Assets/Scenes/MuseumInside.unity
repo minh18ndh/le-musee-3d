@@ -164,7 +164,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.35
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8628835a0d819f6449a72f6228a80434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  executeFunction: 0
 --- !u!4 &648827214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e8fce81083516d04aa69d5ae71ae363f, type: 3}

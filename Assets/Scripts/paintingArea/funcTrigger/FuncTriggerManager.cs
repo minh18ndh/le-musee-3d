@@ -1,18 +1,20 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FuncTriggerManager : MonoBehaviour
 {
     public GameObject[] buttons;
-    private bool isPlayerInsideTrigger = false;  // Track if player is inside trigger
+    private bool isPlayerInsideTrigger = false;
+    private bool isAnyFunctionActive = false; // Lock other interactions when true
 
     private DepthOfField dofScript;
-    private DepthOfFieldButtonClickHandler dofEnable;
+    private PlayVideo pvScript;
 
     private void Start()
     {
         dofScript = GetComponentInChildren<DepthOfField>();
-        dofEnable = GetComponentInChildren<DepthOfFieldButtonClickHandler>();
+        pvScript = GetComponentInChildren<PlayVideo>();
+
+
         SetButtonVisibility(false);
     }
 
@@ -22,7 +24,6 @@ public class FuncTriggerManager : MonoBehaviour
         {
             isPlayerInsideTrigger = true;
             SetButtonVisibility(true);
-            Debug.Log(other.gameObject.name + " entered the trigger area.");
         }
     }
 
@@ -30,16 +31,15 @@ public class FuncTriggerManager : MonoBehaviour
     {
         if (isPlayerInsideTrigger)
         {
-            dofScript.HaltFunction();
-            dofEnable.SetExecuteFunction(false);
+            // Reset everything when exiting
+            HaltAllFunctions();
+            isAnyFunctionActive = false;
 
             isPlayerInsideTrigger = false;
-
             SetButtonVisibility(false);
-            Debug.Log(other.gameObject.name + " exited the trigger area.");
         }
     }
-    
+
     // Control button visibility
     private void SetButtonVisibility(bool visibility)
     {
@@ -47,5 +47,34 @@ public class FuncTriggerManager : MonoBehaviour
         {
             button.SetActive(visibility);
         }
+    }
+
+    // Halt all active functions
+    private void HaltAllFunctions()
+    {
+        if (dofScript != null)
+        {
+            dofScript.HaltFunction();
+        }
+        if (pvScript != null)
+        {
+            pvScript.HaltFunction();
+        }
+        // Add more calls to stop other functionalities here
+    }
+
+    // Lock interactions (cannot activate a function) when another function is active
+    public bool CanActivateFunction()
+    {
+        if (isAnyFunctionActive) return false; // Prevent activation if any another function is active
+
+        isAnyFunctionActive = true;
+        return true; // Allow activation
+    }
+
+    // Unlock interactions when a function ends
+    public void FunctionDeactivated()
+    {
+        isAnyFunctionActive = false;
     }
 }

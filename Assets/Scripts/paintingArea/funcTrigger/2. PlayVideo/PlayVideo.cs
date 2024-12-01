@@ -4,6 +4,11 @@ public class PlayVideo : MonoBehaviour
 {
     public void ExecuteFunction()
     {
-        Debug.Log("Function PlayVideo executed!");
+        Debug.Log("PlayVideo executed!");
+    }
+
+    public void HaltFunction()
+    {
+        Debug.Log("PlayVideo deactivated.");
     }
 }
