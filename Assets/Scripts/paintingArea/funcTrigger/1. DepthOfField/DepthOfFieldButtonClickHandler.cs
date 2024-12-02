@@ -3,23 +3,25 @@ using UnityEngine;
 public class DepthOfFieldButtonClickHandler : MonoBehaviour
 {
     private DepthOfField dofScript;
-    private FuncTriggerManager triggerManager; // Reference to parent manager
+    private FuncTriggerManager triggerManager;
     private bool isClicked;
+    private bool isFirstClick;
 
     void Start()
     {
         dofScript = GetComponent<DepthOfField>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>(); // Get the manager from parent
+        triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
+        isFirstClick = true;
     }
 
     void Update()
     {
-        // Exit the function when Q is pressed
         if (Input.GetKeyDown(KeyCode.Q) && dofScript != null)
         {
             dofScript.HaltFunction();
             triggerManager.FunctionDeactivated(); // Notify manager to unlock for interactions
+            isFirstClick = true;
         }
     }
 
@@ -27,11 +29,11 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
     {
         if (!triggerManager.CanActivateFunction() && triggerManager != null)
         {
-            // If function activation is denied (another function is active), ignore the click
-            return;
+            return;  // If function activation denied (another function is active), ignore the click
         }
 
         isClicked = true;
+        isFirstClick = false;
     }
 
     void OnMouseUp()
@@ -40,6 +42,15 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
         {
             dofScript.ExecuteFunction();
         }
+
+        else
+        {
+            if (!isFirstClick)
+            {
+                UIManager.Instance.ShowActiveFunctionWarning();
+            }
+        }
+
         isClicked = false;
     }
 }

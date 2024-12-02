@@ -1,19 +1,25 @@
 using UnityEngine;
+using TMPro;
 
 public class FuncTriggerManager : MonoBehaviour
 {
     public GameObject[] buttons;
-    private bool isPlayerInsideTrigger = false;
-    private bool isAnyFunctionActive = false; // Lock other interactions when true
+    private bool isPlayerInsideTrigger;
+    private bool isAnyFunctionActive;// Lock other interactions when true
 
     private DepthOfField dofScript;
     private PlayVideo pvScript;
+
+    public TMP_Text warningText; // Reference to a TextMeshPro UI element
+    private Coroutine warningCoroutine; // To handle coroutine properly
 
     private void Start()
     {
         dofScript = GetComponentInChildren<DepthOfField>();
         pvScript = GetComponentInChildren<PlayVideo>();
 
+        isPlayerInsideTrigger = false;
+        isAnyFunctionActive = false;
 
         SetButtonVisibility(false);
     }
@@ -31,7 +37,7 @@ public class FuncTriggerManager : MonoBehaviour
     {
         if (isPlayerInsideTrigger)
         {
-            // Reset everything when exiting
+            // Reset everything when exit
             HaltAllFunctions();
             isAnyFunctionActive = false;
 
