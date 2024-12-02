@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance; // Singleton pattern for global access
 
     public GameObject warningPanel;
-    public Text warningText;        
+    public TMP_Text warningText;        
     public float warningDuration = 3f; // How long warning display
 
     private void Awake()
@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 
    public void ShowActiveFunctionWarning()
     {
-        if (warningPanel != null && warningText != null)
+        if (warningPanel != null)
         {
             warningPanel.SetActive(true);
             Invoke(nameof(HideWarning), warningDuration);
