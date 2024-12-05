@@ -85,6 +85,16 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void PauseBackgroundMusic()
+    {
+        backgroundMusicSource.Pause();
+    }
+
+    public void ResumeBackgroundMusic()
+    {
+        backgroundMusicSource.Play();
+    }
+
     public void Mode1()
     {
         StopDiscoEffect();
@@ -111,6 +121,8 @@ public class UIManager : MonoBehaviour
         lights[2].color = Color.blue;
         lights[3].color = Color.yellow;
         lights[4].color = Color.magenta;
+        lights[5].color = Color.cyan;
+        lights[6].color = Color.white;
     }
 
     public void Mode4()
