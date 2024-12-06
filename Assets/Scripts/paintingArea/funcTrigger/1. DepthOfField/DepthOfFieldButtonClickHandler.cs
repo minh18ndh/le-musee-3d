@@ -5,14 +5,14 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
     private DepthOfField dofScript;
     private FuncTriggerManager triggerManager;
     private bool isClicked;
-    private bool isFirstClick;
+    //private bool isFirstClick;
 
     void Start()
     {
         dofScript = GetComponent<DepthOfField>();
         triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
-        isFirstClick = true;
+        //isFirstClick = true;
     }
 
     void Update()
@@ -21,7 +21,7 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
         {
             dofScript.HaltFunction();
             triggerManager.FunctionDeactivated(); // Notify manager to unlock for interactions
-            isFirstClick = true;
+            //isFirstClick = true;
         }
     }
 
@@ -29,11 +29,12 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
     {
         if (!triggerManager.CanActivateFunction() && triggerManager != null)
         {
+            UIManager.Instance.ShowActiveFunctionWarning();
             return;  // If function activation denied (another function is active), ignore the click
         }
 
         isClicked = true;
-        isFirstClick = false;
+        //isFirstClick = false;
     }
 
     void OnMouseUp()
@@ -43,13 +44,13 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
             dofScript.ExecuteFunction();
         }
 
-        else
-        {
-            if (!isFirstClick)
-            {
-                UIManager.Instance.ShowActiveFunctionWarning();
-            }
-        }
+        //else
+        //{
+        //    if (!isFirstClick)
+        //    {
+        //        UIManager.Instance.ShowActiveFunctionWarning();
+        //    }
+        //}
 
         isClicked = false;
     }

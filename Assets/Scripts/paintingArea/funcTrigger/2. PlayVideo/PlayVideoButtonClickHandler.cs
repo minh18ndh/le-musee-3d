@@ -1,21 +1,20 @@
 using UnityEngine;
 
-public class PlayVideoButtonClickHanler : MonoBehaviour
+public class PlayVideoButtonClickHandler : MonoBehaviour
 {
     private PlayVideo pvScript;
-    private FuncTriggerManager triggerManager; // Reference to parent manager
+    private FuncTriggerManager triggerManager;
     private bool isClicked;
 
     void Start()
     {
         pvScript = GetComponent<PlayVideo>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>(); // Get the manager from parent
+        triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
     }
 
     void Update()
     {
-        // Exit the function when Q is pressed
         if (Input.GetKeyDown(KeyCode.Q) && pvScript != null)
         {
             pvScript.HaltFunction();
@@ -27,8 +26,8 @@ public class PlayVideoButtonClickHanler : MonoBehaviour
     {
         if (!triggerManager.CanActivateFunction() && triggerManager != null)
         {
-            // If function activation is denied (another function is active), ignore the click
-            return;
+            UIManager.Instance.ShowActiveFunctionWarning();
+            return;  // If function activation denied (another function is active), ignore the click
         }
 
         isClicked = true;
@@ -40,6 +39,7 @@ public class PlayVideoButtonClickHanler : MonoBehaviour
         {
             pvScript.ExecuteFunction();
         }
+
         isClicked = false;
     }
 }
