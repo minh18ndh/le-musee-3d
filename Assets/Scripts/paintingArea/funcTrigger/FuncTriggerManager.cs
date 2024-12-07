@@ -14,6 +14,8 @@ public class FuncTriggerManager : MonoBehaviour
     public TMP_Text warningText;
     private Coroutine warningCoroutine;  // To handle coroutine
 
+    private bool isQpressed;
+
     private void Start()
     {
         dofScript = GetComponentInChildren<DepthOfField>();
@@ -22,15 +24,27 @@ public class FuncTriggerManager : MonoBehaviour
 
         isPlayerInsideTrigger = false;
         //isAnyFunctionActive = false;
+        isQpressed = false;
 
         SetButtonVisibility(false);
     }
 
     private void Update()
     {
-        if (isPlayerInsideTrigger && Input.GetKeyUp(KeyCode.Q))
+        if (!Input.GetKeyDown(KeyCode.Q))
+        {
+            isQpressed = true;
+        }
+
+        if (isQpressed && isPlayerInsideTrigger && Input.GetKeyDown(KeyCode.E))
         {
             HaltAllFunctions();
+            isQpressed = false;
+        }
+
+        if (!Input.GetKeyUp(KeyCode.Q))
+        {
+            isQpressed = false;
         }
     }
 
