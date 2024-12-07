@@ -94,7 +94,11 @@ public class FuncTriggerManager : MonoBehaviour
         { 
             pagScript.HaltFunction();
         }
-        // Add more calls to stop other functionalities here
+
+        // Add more calls to halt other functions here
+
+
+        UIManager.Instance.ShowNotification("All functions deactivated.");
     }
 
     // Lock interactions (cannot activate a function) when another function is active
