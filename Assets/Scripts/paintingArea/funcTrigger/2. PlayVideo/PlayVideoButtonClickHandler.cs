@@ -6,6 +6,7 @@ public class PlayVideoButtonClickHandler : MonoBehaviour
     private FuncTriggerManager triggerManager;
     private bool isClicked;
     private bool isQpressed;
+    private bool isFunctionActive;
 
     void Start()
     {
@@ -13,6 +14,7 @@ public class PlayVideoButtonClickHandler : MonoBehaviour
         triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         isQpressed = false;
+        isFunctionActive = false;
     }
 
     void Update()
@@ -37,11 +39,11 @@ public class PlayVideoButtonClickHandler : MonoBehaviour
 
     void OnMouseDown()
     {
-        /*if (!triggerManager.CanActivateFunction() && triggerManager != null)
+        if (isFunctionActive)
         {
-            UIManager.Instance.ShowActiveFunctionWarning();
-            return;  // If function activation denied (another function is active), ignore the click
-        }*/
+            UIManager.Instance.ShowNotification("The function is already running.");
+            return;  // If the function is active, ignore the click
+        }
 
         isClicked = true;
     }
@@ -53,6 +55,12 @@ public class PlayVideoButtonClickHandler : MonoBehaviour
             pvScript.ExecuteFunction();
         }
 
+        isFunctionActive = true;
         isClicked = false;
+    }
+
+    public void FunctionActiveState(bool isActive)
+    { 
+        isFunctionActive = isActive; 
     }
 }

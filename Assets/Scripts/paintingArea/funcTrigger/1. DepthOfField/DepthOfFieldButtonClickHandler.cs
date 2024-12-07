@@ -7,6 +7,7 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
     private bool isClicked;
     //private bool isFirstClick;
     private bool isQpressed;
+    private bool isFunctionActive;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
         isClicked = false;
         //isFirstClick = true;
         isQpressed = false;
+        isFunctionActive = false;
     }
 
     void Update()
@@ -40,11 +42,11 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
 
     void OnMouseDown()
     {
-        /*if (!triggerManager.CanActivateFunction() && triggerManager != null)
+        if (isFunctionActive)
         {
-            UIManager.Instance.ShowActiveFunctionWarning();
+            UIManager.Instance.ShowNotification("The function is already running.");
             return;  // If function activation denied (another function is active), ignore the click
-        }*/
+        }
 
         isClicked = true;
         //isFirstClick = false;
@@ -64,7 +66,12 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
         //        UIManager.Instance.ShowActiveFunctionWarning();
         //    }
         //}
-
+        isFunctionActive = true;
         isClicked = false;
+    }
+
+    public void FunctionActiveState(bool isActive)
+    {
+        isFunctionActive = isActive;
     }
 }

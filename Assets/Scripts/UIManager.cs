@@ -44,16 +44,17 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ShowActiveFunctionWarning()
+    public void ShowNotification(string notiText)
     {
         if (warningPanel != null)
         {
             warningPanel.SetActive(true);
-            Invoke(nameof(HideWarning), warningDuration);
+            warningText.text = notiText;
+            Invoke(nameof(HideNotification), warningDuration);
         }
     }
 
-    private void HideWarning()
+    private void HideNotification()
     {
         if (warningPanel != null)
         {

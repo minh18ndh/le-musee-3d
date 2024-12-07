@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class DepthOfField : MonoBehaviour
 {
+    private DepthOfFieldButtonClickHandler dofButton;
     [SerializeField] private Volume globalVolume;
     [SerializeField] private Transform playerCamera;
 
@@ -18,6 +19,8 @@ public class DepthOfField : MonoBehaviour
 
     void Start()
     {
+        dofButton = GetComponent<DepthOfFieldButtonClickHandler>();
+
         dofEnabled = false;
         artFrameOriginalPos = artFrame.localPosition;
 
@@ -42,13 +45,16 @@ public class DepthOfField : MonoBehaviour
     public void ExecuteFunction()
     {
         dofEnabled = true;
-        Debug.Log("Depth of Field adjustment activated.");
+        UIManager.Instance.ShowNotification("Depth of Field effect activated.");
+        Debug.Log("Depth of Field effect activated.");
     }
 
     public void HaltFunction()
     {
         ResetDepthOfField();
-        Debug.Log("Depth of Field adjustment deactivated.");
+        dofButton.FunctionActiveState(false);
+        UIManager.Instance.ShowNotification("Depth of Field effect deactivated.");
+        Debug.Log("Depth of Field effect deactivated.");
     }
 
     private void AdjustDepthOfField()

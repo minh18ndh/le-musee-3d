@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayAudioGuide : MonoBehaviour
 {
+    private PlayAudioGuideButtonClickHandler pagButton;
     [SerializeField] private GameObject PlayAudioGuideButton;
     [SerializeField] private GameObject artAudioGuide;
     private AudioSource audioGuideSource;
@@ -9,6 +10,7 @@ public class PlayAudioGuide : MonoBehaviour
 
     public void Start()
     {
+        pagButton = GetComponent<PlayAudioGuideButtonClickHandler>();
         audioGuideSource = artAudioGuide.GetComponent<AudioSource>();
         isAudioGuideFinishedPlaying = false;
     }
@@ -31,6 +33,7 @@ public class PlayAudioGuide : MonoBehaviour
     {
         artAudioGuide.SetActive(true);
         audioGuideSource.Play();
+        UIManager.Instance.ShowNotification("PlayAudioGuide activated.");
         Debug.Log("PlayAudioGuide executed!");
     }
 
@@ -38,7 +41,8 @@ public class PlayAudioGuide : MonoBehaviour
     {
         audioGuideSource.Stop();
         artAudioGuide.SetActive(false);
-        //isAudioGuideFinishedPlaying = true;
+        pagButton.FunctionActiveState(false);
+        UIManager.Instance.ShowNotification("PlayAudioGuide deactivated.");
         Debug.Log("PlayAudioGuide deactivated.");
     }
 }
