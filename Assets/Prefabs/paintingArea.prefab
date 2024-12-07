@@ -1205,6 +1205,7 @@ GameObject:
   - component: {fileID: 4500067210398368227}
   - component: {fileID: 2977239640644557562}
   - component: {fileID: 5546801713610471909}
+  - component: {fileID: 3028469774663149115}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -1335,6 +1336,19 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &3028469774663149115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668898356862557736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d205469150d91474785008166b673259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skipTime: 5
 --- !u!1 &5902979685299889427
 GameObject:
   m_ObjectHideFlags: 0

@@ -5873,7 +5873,7 @@ PrefabInstance:
       objectReference: {fileID: 994899998}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
-      value: file://C:/Users/minhn/Downloads/Dive.mp4
+      value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/Dive.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 6436438148835060608, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalPosition.x

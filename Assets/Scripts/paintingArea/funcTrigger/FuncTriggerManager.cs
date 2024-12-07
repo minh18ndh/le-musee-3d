@@ -5,13 +5,13 @@ public class FuncTriggerManager : MonoBehaviour
 {
     public GameObject[] buttons;
     private bool isPlayerInsideTrigger;
-    private bool isAnyFunctionActive;// Lock other interactions when true
+    private bool isAnyFunctionActive;  // Lock other buttons' interactions when true
 
     private DepthOfField dofScript;
     private PlayVideo pvScript;
 
-    public TMP_Text warningText; // Reference to a TextMeshPro UI element
-    private Coroutine warningCoroutine; // To handle coroutine properly
+    public TMP_Text warningText;
+    private Coroutine warningCoroutine;  // To handle coroutine
 
     private void Start()
     {
