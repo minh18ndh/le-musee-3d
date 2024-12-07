@@ -9,6 +9,7 @@ public class FuncTriggerManager : MonoBehaviour
 
     private DepthOfField dofScript;
     private PlayVideo pvScript;
+    private PlayAudioGuide pagScript;
 
     public TMP_Text warningText;
     private Coroutine warningCoroutine;  // To handle coroutine
@@ -17,6 +18,7 @@ public class FuncTriggerManager : MonoBehaviour
     {
         dofScript = GetComponentInChildren<DepthOfField>();
         pvScript = GetComponentInChildren<PlayVideo>();
+        pagScript = GetComponentInChildren<PlayAudioGuide>();
 
         isPlayerInsideTrigger = false;
         isAnyFunctionActive = false;
@@ -65,6 +67,10 @@ public class FuncTriggerManager : MonoBehaviour
         if (pvScript != null)
         {
             pvScript.HaltFunction();
+        }
+        if (pagScript != null)
+        { 
+            pagScript.HaltFunction();
         }
         // Add more calls to stop other functionalities here
     }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayAudioGuide : MonoBehaviour
 {
+    [SerializeField] private GameObject PlayAudioGuideButton;
     [SerializeField] private GameObject artAudioGuide;
     private AudioSource audioGuideSource;
     private bool isAudioGuideFinishedPlaying;

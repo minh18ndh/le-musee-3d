@@ -374,6 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721676eb72f4a104f971ccc3a51d43b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayAudioGuideButton: {fileID: 1876537702919121119}
   artAudioGuide: {fileID: 5374025154507095768}
 --- !u!64 &8958134488105410469
 MeshCollider:
