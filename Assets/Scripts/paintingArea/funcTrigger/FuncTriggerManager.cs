@@ -5,7 +5,7 @@ public class FuncTriggerManager : MonoBehaviour
 {
     public GameObject[] buttons;
     private bool isPlayerInsideTrigger;
-    private bool isAnyFunctionActive;  // Lock other buttons' interactions when true
+    //private bool isAnyFunctionActive;  // Lock other buttons' interactions when true
 
     private DepthOfField dofScript;
     private PlayVideo pvScript;
@@ -21,9 +21,17 @@ public class FuncTriggerManager : MonoBehaviour
         pagScript = GetComponentInChildren<PlayAudioGuide>();
 
         isPlayerInsideTrigger = false;
-        isAnyFunctionActive = false;
+        //isAnyFunctionActive = false;
 
         SetButtonVisibility(false);
+    }
+
+    private void Update()
+    {
+        if (isPlayerInsideTrigger && Input.GetKeyUp(KeyCode.Q))
+        {
+            HaltAllFunctions();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +49,7 @@ public class FuncTriggerManager : MonoBehaviour
         {
             // Reset everything when exit
             HaltAllFunctions();
-            isAnyFunctionActive = false;
+            //isAnyFunctionActive = false;
 
             isPlayerInsideTrigger = false;
             SetButtonVisibility(false);
@@ -76,17 +84,17 @@ public class FuncTriggerManager : MonoBehaviour
     }
 
     // Lock interactions (cannot activate a function) when another function is active
-    public bool CanActivateFunction()
+    /*public bool CanActivateFunction()
     {
         if (isAnyFunctionActive) return false; // Prevent activation if any another function is active
 
         isAnyFunctionActive = true;
         return true; // Allow activation
-    }
+    }*/
 
     // Unlock interactions when a function ends
-    public void FunctionDeactivated()
+    /*public void FunctionDeactivated()
     {
         isAnyFunctionActive = false;
-    }
+    }*/
 }
