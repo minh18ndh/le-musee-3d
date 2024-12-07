@@ -1866,7 +1866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 180}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418513040
@@ -2201,16 +2201,16 @@ RectTransform:
   m_GameObject: {fileID: 549275681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 418513039}
   m_Father: {fileID: 1493991460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 600, y: 350}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549275683
 MonoBehaviour:
@@ -2225,7 +2225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5534,7 +5534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1500805480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5871,6 +5871,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 994899998}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 85f29f1dc213d7548aa549d6882e26d4, type: 3}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
       value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/Dive.mp4
@@ -6405,6 +6409,27 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 994899998}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 85f29f1dc213d7548aa549d6882e26d4, type: 3}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374025154507095768, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Url
+      value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/Portrait
+        of an Artist (Pool with Two Figures).mp4
+      objectReference: {fileID: 0}
     - target: {fileID: 6436438148835060608, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -6413,9 +6438,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.76
       objectReference: {fileID: 0}
+    - target: {fileID: 7880219183752358195, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: PoolwithTwoFigures
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684592981308788976, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

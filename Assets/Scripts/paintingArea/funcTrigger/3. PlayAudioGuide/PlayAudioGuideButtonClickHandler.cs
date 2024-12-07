@@ -2,20 +2,44 @@ using UnityEngine;
 
 public class PlayAudioGuideButtonClickHandler : MonoBehaviour
 {
-    private PlayAudioGuide script;
+    private PlayAudioGuide pagScript;
+    private FuncTriggerManager triggerManager;
+    private bool isClicked;
 
     void Start()
     {
-        script = GetComponent<PlayAudioGuide>();
+        pagScript = GetComponent<PlayAudioGuide>();
+        triggerManager = GetComponentInParent<FuncTriggerManager>();
+        isClicked = false;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && pagScript != null)
+        {
+            pagScript.HaltFunction();
+            //triggerManager.FunctionDeactivated(); // Notify manager to unlock for interactions
+        }
     }
 
     void OnMouseDown()
     {
-        if (script != null)
+        //if (!triggerManager.CanActivateFunction() && triggerManager != null)
+        //{
+        //    UIManager.Instance.ShowActiveFunctionWarning();
+        //    return;  // If function activation denied (another function is active), ignore the click
+        //}
+
+        isClicked = true;
+    }
+
+    void OnMouseUp()
+    {
+        if (isClicked && pagScript != null)
         {
-            // Call a method from function script when click
-            script.ExecuteFunction();
+            pagScript.ExecuteFunction();
         }
+
+        isClicked = false;
     }
 }
-
