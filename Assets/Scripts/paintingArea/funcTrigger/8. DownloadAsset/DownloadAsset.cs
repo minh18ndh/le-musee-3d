@@ -4,7 +4,7 @@ using System.IO;
 public class DownloadAsset : MonoBehaviour
 {
     // File name
-    public string fileName = "PWTF.jpg";
+    //public string hostedFileName;
 
     // Hosted file path
     public string hostedFilePath;
@@ -23,17 +23,19 @@ public class DownloadAsset : MonoBehaviour
 
     public void ExecuteFunction()
     {
+        UIManager.Instance.ShowNotification("Opening asset's link for download...");
+        Debug.Log("Download Asset executed!");
 #if UNITY_EDITOR || UNITY_STANDALONE
         // In Editor or Standalone builds, perform the file operations
-        LoadAndSaveLocalImage();
+        LoadAndSaveLocalFile();
 #elif UNITY_WEBGL
         // In WebGL, download using JavaScript
-        DownloadImageForWebGL();
+        DownloadFileForWebGL();
 #endif
     }
 
 #if UNITY_EDITOR || UNITY_STANDALONE
-    private void LoadAndSaveLocalImage()
+    private void LoadAndSaveLocalFile()
     {
         if (File.Exists(localFilePath))
         {
@@ -60,17 +62,19 @@ public class DownloadAsset : MonoBehaviour
 #endif
 
 #if UNITY_WEBGL
-    private void DownloadImageForWebGL()
+    private void DownloadFileForWebGL()
     {
         // Use Unity's WebGL integration to call JavaScript
+        // Delay for 1 second before opening the asset's link in a new tab
         string jsCode = @"
             var link = document.createElement('a');
             link.target = ""_blank"";
             link.href = '" + hostedFilePath + @"';
-            link.download = '" + fileName + @"';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            setTimeout(function() {
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }, 1000);
         ";
         Application.ExternalEval(jsCode);
     }

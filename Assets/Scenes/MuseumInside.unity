@@ -6419,8 +6419,12 @@ PrefabInstance:
       value: PWTF.jpg
       objectReference: {fileID: 0}
     - target: {fileID: 3906499527241086519, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: hostedFileName
+      value: Pool with Two Figures.jpg
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906499527241086519, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: hostedFilePath
-      value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artfiles/PWTF.jpg
+      value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artfiles/PoolwithTwoFigures.jpg
       objectReference: {fileID: 0}
     - target: {fileID: 4151729782320935369, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalScale.z
