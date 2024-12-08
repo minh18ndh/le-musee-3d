@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayAudioGuide : MonoBehaviour
 {
     private PlayAudioGuideButtonClickHandler pagButton;
-    [SerializeField] private GameObject PlayAudioGuideButton;
+    //[SerializeField] private GameObject PlayAudioGuideButton;
     [SerializeField] private GameObject artAudioGuide;
     private AudioSource audioGuideSource;
     private bool isAudioGuideFinishedPlaying;
@@ -17,10 +17,13 @@ public class PlayAudioGuide : MonoBehaviour
 
     public void Update()
     {
-        if (artAudioGuide.activeSelf)
+        if (artAudioGuide.activeSelf && audioGuideSource.clip != null)
         {
-            isAudioGuideFinishedPlaying = audioGuideSource.time >= audioGuideSource.clip.length;
-            Debug.Log(isAudioGuideFinishedPlaying);
+            if (Mathf.Abs((float)(audioGuideSource.time - audioGuideSource.clip.length)) < 0.1f)
+            {
+                isAudioGuideFinishedPlaying = true;
+            }
+            //Debug.Log(isAudioGuideFinishedPlaying);
         }
 
         if (!audioGuideSource.isPlaying && isAudioGuideFinishedPlaying)
@@ -29,6 +32,7 @@ public class PlayAudioGuide : MonoBehaviour
             isAudioGuideFinishedPlaying = false;
         }
     }
+
     public void ExecuteFunction()
     {
         artAudioGuide.SetActive(true);

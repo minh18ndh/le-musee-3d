@@ -1348,8 +1348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c40a3f7d1a677245abaeb3172e3e829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningPanel: {fileID: 549275681}
-  warningText: {fileID: 418513040}
+  notificationPanel: {fileID: 549275681}
+  notificationText: {fileID: 418513040}
   Iphone6: {fileID: 1500805479}
   backgroundMusicSource: {fileID: 345116370}
   musicFiles:
@@ -1844,7 +1844,7 @@ GameObject:
   - component: {fileID: 418513041}
   - component: {fileID: 418513040}
   m_Layer: 5
-  m_Name: ActiveFunctionWarningText
+  m_Name: NotificationText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2186,7 +2186,7 @@ GameObject:
   - component: {fileID: 549275684}
   - component: {fileID: 549275683}
   m_Layer: 5
-  m_Name: ActiveFunctionWarningPanel
+  m_Name: NotificationPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3127,19 +3127,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856202281713144078, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 856202281713144078, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Size.y
-      value: 1.9558438
+      value: 2.2655947
       objectReference: {fileID: 0}
     - target: {fileID: 856202281713144078, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Center.x
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 856202281713144078, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Center.y
-      value: -0.57646704
+      value: -0.731338
       objectReference: {fileID: 0}
     - target: {fileID: 856202281713144078, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Center.z
@@ -5863,6 +5863,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3906499527241086519, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: fileName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906499527241086519, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: hostedFilePath
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4151729782320935369, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.7
@@ -6342,6 +6350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 466726275745299505, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.793
+      objectReference: {fileID: 0}
     - target: {fileID: 498375235194368886, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.65
@@ -6402,6 +6414,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 3906499527241086519, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: fileName
+      value: PWTF.jpg
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906499527241086519, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: hostedFilePath
+      value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artfiles/PWTF.jpg
+      objectReference: {fileID: 0}
     - target: {fileID: 4151729782320935369, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.2
@@ -6410,6 +6430,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 994899998}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 341e40637104ac24ab00dd2059ce7bc2, type: 3}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -6441,8 +6465,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7880219183752358195, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7927228207319765514, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: artAmbientSound
+      value: 
+      objectReference: {fileID: 2082120165}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: PoolwithTwoFigures
@@ -7392,6 +7420,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3845919931547218195, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
   m_PrefabInstance: {fileID: 2052526088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2082120165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7880219183752358195, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+  m_PrefabInstance: {fileID: 1631399496}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2136899199
 GameObject:

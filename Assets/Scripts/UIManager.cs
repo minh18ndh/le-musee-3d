@@ -7,9 +7,9 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;       // Singleton pattern for global access
 
-    public GameObject warningPanel;       
-    public TMP_Text warningText;            
-    private float warningDuration = 3f;      // How long the warning is displayed
+    public GameObject notificationPanel;       
+    public TMP_Text notificationText;            
+    private float notificationDuration = 3f;      // How long the warning is displayed
 
     public GameObject Iphone6;
 
@@ -46,19 +46,19 @@ public class UIManager : MonoBehaviour
 
     public void ShowNotification(string notiText)
     {
-        if (warningPanel != null)
+        if (notificationPanel != null)
         {
-            warningPanel.SetActive(true);
-            warningText.text = notiText;
-            Invoke(nameof(HideNotification), warningDuration);
+            notificationPanel.SetActive(true);
+            notificationText.text = notiText;
+            Invoke(nameof(HideNotification), notificationDuration);
         }
     }
 
     private void HideNotification()
     {
-        if (warningPanel != null)
+        if (notificationPanel != null)
         {
-            warningPanel.SetActive(false);
+            notificationPanel.SetActive(false);
         }
     }
 
