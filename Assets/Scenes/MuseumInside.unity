@@ -1365,7 +1365,6 @@ MonoBehaviour:
   - {fileID: 808026}
   - {fileID: 795956126}
   - {fileID: 1777758120}
-  colorBlindnessOption: {fileID: 0}
 --- !u!4 &345116369
 Transform:
   m_ObjectHideFlags: 0
@@ -5898,7 +5897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3906499527241086519, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: hostedFilePath
-      value: 
+      value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artfiles/PortraitdeMademoisellePhuong.jpg
       objectReference: {fileID: 0}
     - target: {fileID: 4151729782320935369, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalScale.z
