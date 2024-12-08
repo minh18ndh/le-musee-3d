@@ -12,6 +12,9 @@ public class FuncTriggerManager : MonoBehaviour
     private PlayAudioGuide pagScript;
     private PlayAmbientSound pasScript;
 
+    private ApplyDisabilityType adtScript;
+    private DownloadAsset daScript;
+
     public TMP_Text warningText;
     private Coroutine warningCoroutine;  // To handle coroutine
 
@@ -23,6 +26,9 @@ public class FuncTriggerManager : MonoBehaviour
         pvScript = GetComponentInChildren<PlayVideo>();
         pagScript = GetComponentInChildren<PlayAudioGuide>();
         pasScript = GetComponentInChildren<PlayAmbientSound>();
+
+        adtScript = GetComponentInChildren<ApplyDisabilityType>();
+        daScript = GetComponentInChildren<DownloadAsset>();
 
         isPlayerInsideTrigger = false;
         //isAnyFunctionActive = false;
@@ -104,6 +110,16 @@ public class FuncTriggerManager : MonoBehaviour
 
         // Add more calls to halt other functions here
 
+
+        if (adtScript != null)
+        {
+            adtScript.HaltFunction();
+        }
+
+        if (daScript != null)
+        {
+            daScript.HaltFunction();
+        }
 
         UIManager.Instance.ShowNotification("All functions deactivated.");
     }

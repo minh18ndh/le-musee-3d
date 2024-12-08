@@ -6,7 +6,7 @@ public class PlayAmbientSoundButtonClickHandler : MonoBehaviour
     private FuncTriggerManager triggerManager;
     private bool isClicked;
     private bool isQpressed;
-    private bool isFunctionActive;
+    //private bool isFunctionActive;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class PlayAmbientSoundButtonClickHandler : MonoBehaviour
         triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         isQpressed = false;
-        isFunctionActive = false;
+        //isFunctionActive = false;
     }
 
     void Update()
@@ -55,12 +55,12 @@ public class PlayAmbientSoundButtonClickHandler : MonoBehaviour
             pasScript.ExecuteFunction();
         }
 
-        isFunctionActive = true;
+        //isFunctionActive = true;
         isClicked = false;
     }
 
-    public void FunctionActiveState(bool isActive)
+    /*public void FunctionActiveState(bool isActive)
     {
         isFunctionActive = isActive;
-    }
+    }*/
 }

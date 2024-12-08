@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
 
     private Coroutine discoCoroutine;   // To store the running Coroutine
 
+    //public GameObject colorBlindnessOption;
+
     private void Awake()
     {
         // Ensure there's only one instance of UIManager
@@ -70,6 +72,16 @@ public class UIManager : MonoBehaviour
             Iphone6.SetActive(!isActive);       // Toggle the active state
         }
     }
+
+    /*public void ShowColorBlindnessOption()
+    {
+        colorBlindnessOption.SetActive(true);
+    }
+
+    public void HideColorBlindnessOption()
+    {
+        colorBlindnessOption.SetActive(false);
+    }*/
 
     public void PlayBackgroundMusic(int musicIndex)
     {

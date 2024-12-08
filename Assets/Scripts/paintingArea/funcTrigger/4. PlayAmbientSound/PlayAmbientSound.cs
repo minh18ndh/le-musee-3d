@@ -46,7 +46,7 @@ public class PlayAmbientSound : MonoBehaviour
     {
         ambientSoundSource.Stop();
         artAmbientSound.SetActive(false);
-        pasButton.FunctionActiveState(false);
+        //pasButton.FunctionActiveState(false);
         UIManager.Instance.ShowNotification("PlayAmbientSound deactivated.");
         Debug.Log("PlayAmbientSound deactivated.");
     }

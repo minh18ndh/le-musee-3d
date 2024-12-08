@@ -10,31 +10,36 @@ public class DownloadAsset : MonoBehaviour
     public string hostedFilePath;
 
     // Local file path
-    public string localFilePath = @"E:\le-musee-3d\Assets\Models\Paintings\PoolwithTwoFigures.jpg";
+    //public string localFilePath = @"E:\le-musee-3d\Assets\Models\Paintings\PoolwithTwoFigures.jpg";
 
     // Local path where the file will be saved (for Unity Editor/Standalone)
-    private string savePathforEditororStandaloneBuilds;
+    /*private string savePathforEditororStandaloneBuilds;
 
     void Start()
     {
         // Define the save path for Editor or Standalone builds
         savePathforEditororStandaloneBuilds = Path.Combine(@"C:\Users\minhn\Downloads", "painting.jpg");
-    }
+    }*/
 
     public void ExecuteFunction()
     {
         UIManager.Instance.ShowNotification("Opening asset's link for download...");
-        Debug.Log("Download Asset executed!");
-#if UNITY_EDITOR || UNITY_STANDALONE
+        Debug.Log("Download Asset executed.");
+/*#if UNITY_EDITOR || UNITY_STANDALONE
         // In Editor or Standalone builds, perform the file operations
-        LoadAndSaveLocalFile();
-#elif UNITY_WEBGL
+        LoadAndSaveLocalFile();*/
+//#elif UNITY_WEBGL
         // In WebGL, download using JavaScript
         DownloadFileForWebGL();
-#endif
+//#endif
     }
 
-#if UNITY_EDITOR || UNITY_STANDALONE
+    public void HaltFunction()
+    {
+
+    }
+
+/*#if UNITY_EDITOR || UNITY_STANDALONE
     private void LoadAndSaveLocalFile()
     {
         if (File.Exists(localFilePath))
@@ -59,9 +64,9 @@ public class DownloadAsset : MonoBehaviour
             Debug.LogError("Local image file does not exist: " + localFilePath);
         }
     }
-#endif
+#endif*/
 
-#if UNITY_WEBGL
+//#if UNITY_WEBGL
     private void DownloadFileForWebGL()
     {
         // Use Unity's WebGL integration to call JavaScript
@@ -78,5 +83,5 @@ public class DownloadAsset : MonoBehaviour
         ";
         Application.ExternalEval(jsCode);
     }
-#endif
+//#endif
 }

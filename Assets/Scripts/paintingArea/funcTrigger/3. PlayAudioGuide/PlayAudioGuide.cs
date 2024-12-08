@@ -45,7 +45,7 @@ public class PlayAudioGuide : MonoBehaviour
     {
         audioGuideSource.Stop();
         artAudioGuide.SetActive(false);
-        pagButton.FunctionActiveState(false);
+        //pagButton.FunctionActiveState(false);
         UIManager.Instance.ShowNotification("PlayAudioGuide deactivated.");
         Debug.Log("PlayAudioGuide deactivated.");
     }
