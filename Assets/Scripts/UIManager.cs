@@ -68,8 +68,8 @@ public class UIManager : MonoBehaviour
     {
         if (Iphone6 != null)
         {
-            bool isActive = Iphone6.activeSelf; // Check if the screen is currently active
-            Iphone6.SetActive(!isActive);       // Toggle the active state
+            bool isActive = Iphone6.activeSelf; 
+            Iphone6.SetActive(!isActive); 
         }
     }
 
@@ -153,7 +153,7 @@ public class UIManager : MonoBehaviour
                 lights[i].color = new Color(Random.value, Random.value, Random.value);
             }
 
-            float blinkDuration = 0.05f;
+            float blinkDuration = 0.1f;
             yield return new WaitForSeconds(blinkDuration);
         }
     }
