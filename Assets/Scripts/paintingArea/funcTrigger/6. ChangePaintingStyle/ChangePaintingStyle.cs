@@ -18,6 +18,7 @@ public class ChangePaintingStyle : MonoBehaviour
     public void ExecuteFunction()
     {
         filteredCanvas.SetActive(true);
+        filterController.SetQState(false);
         //UIManager.Instance.ShowColorBlindnessOption();
         UIManager.Instance.ShowNotification("ChangePaintingStyle activated.");
         Debug.Log("ChangePaintingStyle activated.");
@@ -25,13 +26,9 @@ public class ChangePaintingStyle : MonoBehaviour
 
     public void HaltFunction()
     {
-        //if (filteredCanvas.activeSelf)
-        //{
-        //    filterController.SetFilter(0);
-        //}
-
-        if (!filterController.AreTwoFiltersActive())  // Only hide filteredCanvas when no filter's activated
+        if (filteredCanvas.activeSelf && !filterController.IsBlindnessActive())  // Only hide filteredCanvas when no filter's activated
         {
+            filterController.SetFilter(0);
             filteredCanvas.SetActive(false);
         }
 

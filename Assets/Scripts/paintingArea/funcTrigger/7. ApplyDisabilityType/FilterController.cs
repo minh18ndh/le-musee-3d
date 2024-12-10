@@ -14,8 +14,12 @@ public class FilterController : MonoBehaviour
     private ApplyDisabilityTypeButtonClickHandler adtButton;
     private ChangePaintingStyleButtonClickHandler cpsButton;
 
+    private bool isQpressed;
+
     private void Start()
     {
+        isQpressed = false;
+
         adtButton = adtObject.GetComponent<ApplyDisabilityTypeButtonClickHandler>();
         cpsButton = cpsObject.GetComponent<ChangePaintingStyleButtonClickHandler>();
 
@@ -30,61 +34,19 @@ public class FilterController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(isQpressed);
         if (filterTypes != null && filterTypes.Length > 0 && filteredCanvasRenderer != null)
         {
-            if (adtButton != null && adtButton.GetFunctionActiveState())
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (Input.GetKeyUp(KeyCode.Alpha1))
-                {
-                    SetFilter(0);
-                    UIManager.Instance.ShowNotification("Normal mode.");
-                    Debug.Log("Normal mode.");
-                }
-
-                else if (Input.GetKeyUp(KeyCode.Alpha2))
-                {
-                    SetFilter(1);
-                    UIManager.Instance.ShowNotification("Protanopia mode.");
-                    Debug.Log("Protanopia mode.");
-                }
-
-                else if (Input.GetKeyUp(KeyCode.Alpha3))
-                {
-                    SetFilter(2);
-                    UIManager.Instance.ShowNotification("Deuteranopia mode.");
-                    Debug.Log("Deuteranopia mode.");
-                }
-
-                else if (Input.GetKeyUp(KeyCode.Alpha4))
-                {
-                    SetFilter(3);
-                    UIManager.Instance.ShowNotification("Tritanopia mode.");
-                    Debug.Log("Tritanopia mode.");
-                }
-
-                else if (Input.GetKeyUp(KeyCode.Alpha5))
-                {
-                    SetFilter(4);
-                    UIManager.Instance.ShowNotification("Achromatopsia mode.");
-                    Debug.Log("Achromatopsia mode.");
-                }
+                isQpressed = true;
             }
 
-            if (cpsButton != null && cpsButton.GetFunctionActiveState())
-            {
-                if (Input.GetKeyUp(KeyCode.Alpha6))
-                {
-                    SetFilter(5);
-                    UIManager.Instance.ShowNotification("Normal mode.");
-                    Debug.Log("Normal mode.");
-                }
+            KeysToSetFilters();
 
-                else if (Input.GetKeyUp(KeyCode.Alpha7))
-                {
-                    SetFilter(6);
-                    UIManager.Instance.ShowNotification("Protanopia mode.");
-                    Debug.Log("Protanopia mode.");
-                }
+            if (Input.GetKeyUp(KeyCode.Q))
+            {
+                isQpressed = false;
             }
         }
     }
@@ -103,8 +65,77 @@ public class FilterController : MonoBehaviour
         }
     }
 
-    public bool AreTwoFiltersActive()
+    private void KeysToSetFilters()
     {
-        return adtButton.GetFunctionActiveState() && cpsButton.GetFunctionActiveState();
+        if (adtButton != null && adtButton.GetFunctionActiveState() && !isQpressed)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SetFilter(0);
+                UIManager.Instance.ShowNotification("Normal mode.");
+                Debug.Log("Normal mode.");
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SetFilter(1);
+                UIManager.Instance.ShowNotification("Protanopia mode.");
+                Debug.Log("Protanopia mode.");
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SetFilter(2);
+                UIManager.Instance.ShowNotification("Deuteranopia mode.");
+                Debug.Log("Deuteranopia mode.");
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SetFilter(3);
+                UIManager.Instance.ShowNotification("Tritanopia mode.");
+                Debug.Log("Tritanopia mode.");
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                SetFilter(4);
+                UIManager.Instance.ShowNotification("Achromatopsia mode.");
+                Debug.Log("Achromatopsia mode.");
+            }
+        }
+
+        if (cpsButton != null && cpsButton.GetFunctionActiveState() && !isQpressed)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                SetFilter(5);
+                UIManager.Instance.ShowNotification("Normal mode.");
+                Debug.Log("Normal mode.");
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Alpha7))
+            {
+                SetFilter(6);
+                UIManager.Instance.ShowNotification("Protanopia mode.");
+                Debug.Log("Protanopia mode.");
+            }
+        }
+    }
+
+    public bool IsStyleActive()
+    {
+        return cpsButton.GetFunctionActiveState();
+    }
+
+    public bool IsBlindnessActive()
+    {
+
+        return adtButton.GetFunctionActiveState();
+    }
+
+    public void SetQState(bool isPressed)
+    {
+        isQpressed = isPressed;
     }
 }
