@@ -3,20 +3,20 @@ using UnityEngine.Video;
 
 public class PlayAmbientSound : MonoBehaviour
 {
-    private PlayAmbientSoundButtonClickHandler pasButton;
+    //private PlayAmbientSoundButtonClickHandler pasButton;
     //[SerializeField] private GameObject PlayAmbientSoundButton;
     [SerializeField] private GameObject artAmbientSound;
     private AudioSource ambientSoundSource;
     private bool isAmbientSoundFinishedPlaying;
 
-    public void Start()
+    private void Start()
     {
-        pasButton = GetComponent<PlayAmbientSoundButtonClickHandler>();
+        //pasButton = GetComponent<PlayAmbientSoundButtonClickHandler>();
         ambientSoundSource = artAmbientSound.GetComponent<AudioSource>();
         isAmbientSoundFinishedPlaying = false;
     }
 
-    public void Update()
+    private void Update()
     {
         if (artAmbientSound.activeSelf && ambientSoundSource.clip != null)
         {

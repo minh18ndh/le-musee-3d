@@ -1600,6 +1600,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 2.064
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: BalduMoulindelaGalette
@@ -1740,6 +1744,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 3.639
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: Nude
@@ -3216,6 +3224,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.908
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: SalvatorMundi
@@ -3612,6 +3624,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0.529
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: TheScream
@@ -4095,6 +4111,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: NympheasenFleur
@@ -4515,6 +4535,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.184
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: CanhNgoiChuaoMienBacVietnam
@@ -6018,6 +6042,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: PortraitdeMademoisellePhuong
@@ -6641,6 +6669,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.76
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 7880219183752358195, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6904,6 +6936,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.13
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: Interchange
@@ -7344,6 +7380,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 4.854
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: ChopSuey
@@ -7444,6 +7484,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: No6
@@ -7621,6 +7665,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.97
       objectReference: {fileID: 0}
+    - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899998}
     - target: {fileID: 8220349567956259758, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Name
       value: Masterpiece

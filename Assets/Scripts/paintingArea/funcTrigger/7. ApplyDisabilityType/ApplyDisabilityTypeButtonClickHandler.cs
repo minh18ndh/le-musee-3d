@@ -3,7 +3,7 @@ using UnityEngine;
 public class ApplyDisabilityTypeButtonClickHandler : MonoBehaviour
 {
     private ApplyDisabilityType adtScript;
-    private FuncTriggerManager triggerManager;
+    //private FuncTriggerManager triggerManager;
     private bool isClicked;
     private bool isQpressed;
     private bool isFunctionActive;
@@ -11,7 +11,7 @@ public class ApplyDisabilityTypeButtonClickHandler : MonoBehaviour
     void Start()
     {
         adtScript = GetComponent<ApplyDisabilityType>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>();
+        //triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         isQpressed = false;
         isFunctionActive = false;

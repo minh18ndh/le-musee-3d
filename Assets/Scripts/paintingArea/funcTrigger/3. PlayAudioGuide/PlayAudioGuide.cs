@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class PlayAudioGuide : MonoBehaviour
 {
-    private PlayAudioGuideButtonClickHandler pagButton;
+    //private PlayAudioGuideButtonClickHandler pagButton;
     //[SerializeField] private GameObject PlayAudioGuideButton;
     [SerializeField] private GameObject artAudioGuide;
     private AudioSource audioGuideSource;
     private bool isAudioGuideFinishedPlaying;
 
-    public void Start()
+    private void Start()
     {
-        pagButton = GetComponent<PlayAudioGuideButtonClickHandler>();
+        //pagButton = GetComponent<PlayAudioGuideButtonClickHandler>();
         audioGuideSource = artAudioGuide.GetComponent<AudioSource>();
         isAudioGuideFinishedPlaying = false;
     }
 
-    public void Update()
+    private void Update()
     {
         if (artAudioGuide.activeSelf && audioGuideSource.clip != null)
         {
@@ -38,7 +38,7 @@ public class PlayAudioGuide : MonoBehaviour
         artAudioGuide.SetActive(true);
         audioGuideSource.Play();
         UIManager.Instance.ShowNotification("PlayAudioGuide activated.");
-        Debug.Log("PlayAudioGuide executed!");
+        Debug.Log("PlayAudioGuide activated.");
     }
 
     public void HaltFunction()

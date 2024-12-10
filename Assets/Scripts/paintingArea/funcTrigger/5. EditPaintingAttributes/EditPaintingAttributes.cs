@@ -6,6 +6,12 @@ public class EditPaintingAttributes : MonoBehaviour
 {
     public void ExecuteFunction()
     {
-        Debug.Log("Function EditPaintingAttributes executed!");
+        UIManager.Instance.ShowNotification("Function not available. Coming soon...");
+        Debug.Log("EditPaintingAttributes activated.");
+    }
+
+    public void HaltFunction()
+    {
+        Debug.Log("EditPaintingAttributes deactivated.");
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayAudioGuideButtonClickHandler : MonoBehaviour
 {
     private PlayAudioGuide pagScript;
-    private FuncTriggerManager triggerManager;
+    //private FuncTriggerManager triggerManager;
     private bool isClicked;
     private bool isQpressed;
     //private bool isFunctionActive;
@@ -11,7 +11,7 @@ public class PlayAudioGuideButtonClickHandler : MonoBehaviour
     void Start()
     {
         pagScript = GetComponent<PlayAudioGuide>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>();
+        //triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         isQpressed = false;
         //isFunctionActive = false;

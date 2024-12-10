@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayAmbientSoundButtonClickHandler : MonoBehaviour
 {
     private PlayAmbientSound pasScript;
-    private FuncTriggerManager triggerManager;
+    //private FuncTriggerManager triggerManager;
     private bool isClicked;
     private bool isQpressed;
     //private bool isFunctionActive;
@@ -11,7 +11,7 @@ public class PlayAmbientSoundButtonClickHandler : MonoBehaviour
     void Start()
     {
         pasScript = GetComponent<PlayAmbientSound>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>();
+        //triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         isQpressed = false;
         //isFunctionActive = false;

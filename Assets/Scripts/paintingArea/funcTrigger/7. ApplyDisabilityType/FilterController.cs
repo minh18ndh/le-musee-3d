@@ -34,7 +34,6 @@ public class FilterController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(isQpressed);
         if (filterTypes != null && filterTypes.Length > 0 && filteredCanvasRenderer != null)
         {
             if (Input.GetKeyDown(KeyCode.Q))

@@ -3,18 +3,18 @@ using UnityEngine;
 public class DownloadAssetButtonClickHandler : MonoBehaviour
 {
     private DownloadAsset daScript;
-    private FuncTriggerManager triggerManager;
+    //private FuncTriggerManager triggerManager;
     private bool isClicked;
     //private bool isQpressed;
-    private bool isFunctionActive;
+    //private bool isFunctionActive;
 
     void Start()
     {
         daScript = GetComponent<DownloadAsset>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>();
+        //triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         //isQpressed = false;
-        isFunctionActive = false;
+        //isFunctionActive = false;
     }
 
     void OnMouseDown()
@@ -35,12 +35,12 @@ public class DownloadAssetButtonClickHandler : MonoBehaviour
             daScript.ExecuteFunction();
         }
 
-        isFunctionActive = true;
+       // isFunctionActive = true;
         isClicked = false;
     }
 
-    public void FunctionActiveState(bool isActive)
+    /*public void FunctionActiveState(bool isActive)
     {
         isFunctionActive = isActive;
-    }
+    }*/
 }

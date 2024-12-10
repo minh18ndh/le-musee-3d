@@ -4,6 +4,7 @@ using TMPro;
 public class FuncTriggerManager : MonoBehaviour
 {
     public GameObject[] buttons;
+    public GameObject artLabel;
     private bool isPlayerInsideTrigger;
     //private bool isAnyFunctionActive;  // Lock other buttons' interactions when true
 
@@ -11,13 +12,15 @@ public class FuncTriggerManager : MonoBehaviour
     private PlayVideo pvScript;
     private PlayAudioGuide pagScript;
     private PlayAmbientSound pasScript;
-
+    private EditPaintingAttributes epaScript;
     private ChangePaintingStyle cpsScript;
     private ApplyDisabilityType adtScript;
     private DownloadAsset daScript;
 
-    public TMP_Text warningText;
-    private Coroutine warningCoroutine;  // To handle coroutine
+    private ExtendArtLabel aiScript;
+
+    //public TMP_Text warningText;
+    //private Coroutine warningCoroutine;  // To handle coroutine
 
     private bool isQpressed;
 
@@ -27,10 +30,12 @@ public class FuncTriggerManager : MonoBehaviour
         pvScript = GetComponentInChildren<PlayVideo>();
         pagScript = GetComponentInChildren<PlayAudioGuide>();
         pasScript = GetComponentInChildren<PlayAmbientSound>();
-
-        cpsScript = GetComponent<ChangePaintingStyle>();
+        epaScript = GetComponentInChildren<EditPaintingAttributes>();
+        cpsScript = GetComponentInChildren<ChangePaintingStyle>();
         adtScript = GetComponentInChildren<ApplyDisabilityType>();
         daScript = GetComponentInChildren<DownloadAsset>();
+
+        aiScript = artLabel.GetComponent<ExtendArtLabel>();
 
         isPlayerInsideTrigger = false;
         //isAnyFunctionActive = false;
@@ -80,6 +85,11 @@ public class FuncTriggerManager : MonoBehaviour
         }
     }
 
+    public bool IsPlayerInside()
+    {
+        return isPlayerInsideTrigger;
+    }
+
     // Control button visibility
     private void SetButtonVisibility(bool visibility)
     {
@@ -110,8 +120,10 @@ public class FuncTriggerManager : MonoBehaviour
             pasScript.HaltFunction();
         }
 
-        // Add more calls to halt other functions here
-
+        if (epaScript != null)
+        {
+            epaScript.HaltFunction();
+        }
 
         if (cpsScript != null)
         {
@@ -126,6 +138,11 @@ public class FuncTriggerManager : MonoBehaviour
         if (daScript != null)
         {
             daScript.HaltFunction();
+        }
+
+        if (aiScript != null)
+        {
+            aiScript.HaltFunction();
         }
 
         UIManager.Instance.ShowNotification("All functions deactivated.");

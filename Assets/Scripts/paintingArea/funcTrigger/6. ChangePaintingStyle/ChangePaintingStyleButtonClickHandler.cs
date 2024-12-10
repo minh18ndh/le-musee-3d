@@ -3,7 +3,7 @@ using UnityEngine;
 public class ChangePaintingStyleButtonClickHandler : MonoBehaviour
 {
     private ChangePaintingStyle cpsScript;
-    private FuncTriggerManager triggerManager;
+    //private FuncTriggerManager triggerManager;
     private bool isClicked;
     private bool isQpressed;
     private bool isFunctionActive;
@@ -11,7 +11,7 @@ public class ChangePaintingStyleButtonClickHandler : MonoBehaviour
     void Start()
     {
         cpsScript = GetComponent<ChangePaintingStyle>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>();
+        //triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         isQpressed = false;
         isFunctionActive = false;

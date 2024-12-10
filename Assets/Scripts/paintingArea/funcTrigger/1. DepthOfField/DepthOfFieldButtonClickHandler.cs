@@ -3,7 +3,7 @@ using UnityEngine;
 public class DepthOfFieldButtonClickHandler : MonoBehaviour
 {
     private DepthOfField dofScript;
-    private FuncTriggerManager triggerManager;
+    //private FuncTriggerManager triggerManager;
     private bool isClicked;
     //private bool isFirstClick;
     private bool isQpressed;
@@ -12,7 +12,7 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
     void Start()
     {
         dofScript = GetComponent<DepthOfField>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>();
+        //triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         //isFirstClick = true;
         isQpressed = false;

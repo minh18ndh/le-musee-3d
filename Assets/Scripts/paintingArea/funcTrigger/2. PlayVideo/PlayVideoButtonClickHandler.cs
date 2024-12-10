@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayVideoButtonClickHandler : MonoBehaviour
 {
     private PlayVideo pvScript;
-    private FuncTriggerManager triggerManager;
+    //private FuncTriggerManager triggerManager;
     private bool isClicked;
     private bool isQpressed;
     private bool isFunctionActive;
@@ -11,7 +11,7 @@ public class PlayVideoButtonClickHandler : MonoBehaviour
     void Start()
     {
         pvScript = GetComponent<PlayVideo>();
-        triggerManager = GetComponentInParent<FuncTriggerManager>();
+        //triggerManager = GetComponentInParent<FuncTriggerManager>();
         isClicked = false;
         isQpressed = false;
         isFunctionActive = false;
