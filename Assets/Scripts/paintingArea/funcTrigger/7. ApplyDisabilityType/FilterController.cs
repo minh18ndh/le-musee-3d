@@ -8,8 +8,17 @@ public class FilterController : MonoBehaviour
     public Texture[] filterTypes; // Drag all your filtered images into this array in the Inspector
     private Renderer filteredCanvasRenderer;
 
+    [SerializeField] private GameObject adtObject;
+    [SerializeField] private GameObject cpsObject;
+
+    private ApplyDisabilityTypeButtonClickHandler adtButton;
+    private ChangePaintingStyleButtonClickHandler cpsButton;
+
     private void Start()
     {
+        adtButton = adtObject.GetComponent<ApplyDisabilityTypeButtonClickHandler>();
+        cpsButton = cpsObject.GetComponent<ChangePaintingStyleButtonClickHandler>();
+
         filteredCanvasRenderer = GetComponent<Renderer>();
 
         // Set default texture (first in the array)
@@ -23,39 +32,59 @@ public class FilterController : MonoBehaviour
     {
         if (filterTypes != null && filterTypes.Length > 0 && filteredCanvasRenderer != null)
         {
-            if (Input.GetKeyUp(KeyCode.Alpha1))
+            if (adtButton != null && adtButton.GetFunctionActiveState())
             {
-                SetFilter(0);
-                UIManager.Instance.ShowNotification("Normal mode.");
-                Debug.Log("Normal mode.");
+                if (Input.GetKeyUp(KeyCode.Alpha1))
+                {
+                    SetFilter(0);
+                    UIManager.Instance.ShowNotification("Normal mode.");
+                    Debug.Log("Normal mode.");
+                }
+
+                else if (Input.GetKeyUp(KeyCode.Alpha2))
+                {
+                    SetFilter(1);
+                    UIManager.Instance.ShowNotification("Protanopia mode.");
+                    Debug.Log("Protanopia mode.");
+                }
+
+                else if (Input.GetKeyUp(KeyCode.Alpha3))
+                {
+                    SetFilter(2);
+                    UIManager.Instance.ShowNotification("Deuteranopia mode.");
+                    Debug.Log("Deuteranopia mode.");
+                }
+
+                else if (Input.GetKeyUp(KeyCode.Alpha4))
+                {
+                    SetFilter(3);
+                    UIManager.Instance.ShowNotification("Tritanopia mode.");
+                    Debug.Log("Tritanopia mode.");
+                }
+
+                else if (Input.GetKeyUp(KeyCode.Alpha5))
+                {
+                    SetFilter(4);
+                    UIManager.Instance.ShowNotification("Achromatopsia mode.");
+                    Debug.Log("Achromatopsia mode.");
+                }
             }
 
-            else if (Input.GetKeyUp(KeyCode.Alpha2))
+            if (cpsButton != null && cpsButton.GetFunctionActiveState())
             {
-                SetFilter(1);
-                UIManager.Instance.ShowNotification("Protanopia mode.");
-                Debug.Log("Protanopia mode.");
-            }
+                if (Input.GetKeyUp(KeyCode.Alpha6))
+                {
+                    SetFilter(5);
+                    UIManager.Instance.ShowNotification("Normal mode.");
+                    Debug.Log("Normal mode.");
+                }
 
-            else if (Input.GetKeyUp(KeyCode.Alpha3))
-            {
-                SetFilter(2);
-                UIManager.Instance.ShowNotification("Deuteranopia mode.");
-                Debug.Log("Deuteranopia mode.");
-            }
-
-            else if (Input.GetKeyUp(KeyCode.Alpha4))
-            {
-                SetFilter(3);
-                UIManager.Instance.ShowNotification("Tritanopia mode.");
-                Debug.Log("Tritanopia mode.");
-            }
-
-            else if (Input.GetKeyUp(KeyCode.Alpha5))
-            {
-                SetFilter(4);
-                UIManager.Instance.ShowNotification("Achromatopsia mode.");
-                Debug.Log("Achromatopsia mode.");
+                else if (Input.GetKeyUp(KeyCode.Alpha7))
+                {
+                    SetFilter(6);
+                    UIManager.Instance.ShowNotification("Protanopia mode.");
+                    Debug.Log("Protanopia mode.");
+                }
             }
         }
     }
@@ -72,5 +101,10 @@ public class FilterController : MonoBehaviour
         {
             Debug.LogWarning("Invalid index or filterTypes array is empty!");
         }
+    }
+
+    public bool AreTwoFiltersActive()
+    {
+        return adtButton.GetFunctionActiveState() && cpsButton.GetFunctionActiveState();
     }
 }

@@ -63,4 +63,9 @@ public class ApplyDisabilityTypeButtonClickHandler : MonoBehaviour
     {
         isFunctionActive = isActive;
     }
+
+    public bool GetFunctionActiveState()
+    {
+        return isFunctionActive;
+    }
 }

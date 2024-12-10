@@ -12,6 +12,7 @@ public class FuncTriggerManager : MonoBehaviour
     private PlayAudioGuide pagScript;
     private PlayAmbientSound pasScript;
 
+    private ChangePaintingStyle cpsScript;
     private ApplyDisabilityType adtScript;
     private DownloadAsset daScript;
 
@@ -27,6 +28,7 @@ public class FuncTriggerManager : MonoBehaviour
         pagScript = GetComponentInChildren<PlayAudioGuide>();
         pasScript = GetComponentInChildren<PlayAmbientSound>();
 
+        cpsScript = GetComponent<ChangePaintingStyle>();
         adtScript = GetComponentInChildren<ApplyDisabilityType>();
         daScript = GetComponentInChildren<DownloadAsset>();
 
@@ -110,6 +112,11 @@ public class FuncTriggerManager : MonoBehaviour
 
         // Add more calls to halt other functions here
 
+
+        if (cpsScript != null)
+        {
+            cpsScript.HaltFunction();
+        }
 
         if (adtScript != null)
         {

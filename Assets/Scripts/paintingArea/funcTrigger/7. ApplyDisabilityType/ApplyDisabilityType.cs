@@ -25,11 +25,16 @@ public class ApplyDisabilityType : MonoBehaviour
 
     public void HaltFunction()
     {
-        if (filteredCanvas.activeSelf)
+        //if (filteredCanvas.activeSelf)
+        //{
+        //    filterController.SetFilter(0);
+        //}
+
+        if (!filterController.AreTwoFiltersActive())  // Only hide filteredCanvas when no filter's activated
         {
-            filterController.SetFilter(0);
+            filteredCanvas.SetActive(false);
         }
-        filteredCanvas.SetActive(false);
+   
         adtButton.FunctionActiveState(false);
         //UIManager.Instance.HideColorBlindnessOption();
         UIManager.Instance.ShowNotification("ApplyDisabilityTypes deactivated.");

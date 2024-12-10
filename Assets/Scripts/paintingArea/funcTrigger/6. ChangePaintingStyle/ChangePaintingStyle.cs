@@ -4,8 +4,40 @@ using UnityEngine;
 
 public class ChangePaintingStyle : MonoBehaviour
 {
+    private ChangePaintingStyleButtonClickHandler cpsButton;
+    public GameObject filteredCanvas;
+
+    private FilterController filterController;
+
+    private void Start()
+    {
+        cpsButton = GetComponent<ChangePaintingStyleButtonClickHandler>();
+        filterController = filteredCanvas.GetComponent<FilterController>();
+    }
+
     public void ExecuteFunction()
     {
-        Debug.Log("Function ChangePaintingStyle executed!");
+        filteredCanvas.SetActive(true);
+        //UIManager.Instance.ShowColorBlindnessOption();
+        UIManager.Instance.ShowNotification("ChangePaintingStyle activated.");
+        Debug.Log("ChangePaintingStyle activated.");
+    }
+
+    public void HaltFunction()
+    {
+        //if (filteredCanvas.activeSelf)
+        //{
+        //    filterController.SetFilter(0);
+        //}
+
+        if (!filterController.AreTwoFiltersActive())  // Only hide filteredCanvas when no filter's activated
+        {
+            filteredCanvas.SetActive(false);
+        }
+
+        cpsButton.FunctionActiveState(false);
+        //UIManager.Instance.HideColorBlindnessOption();
+        UIManager.Instance.ShowNotification("ChangePaintingStyle deactivated.");
+        Debug.Log("ChangePaintingStyle deactivated.");
     }
 }
