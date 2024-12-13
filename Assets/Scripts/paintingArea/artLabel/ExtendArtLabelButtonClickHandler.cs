@@ -8,15 +8,13 @@ public class ExtendArtLabelButtonClickHandler : MonoBehaviour
     [SerializeField] private GameObject funcTrigger;
     private FuncTriggerManager triggerManager;
     private bool isClicked;
-    private bool isQpressed;
     private bool isFunctionActive;
 
     void Start()
     {
         aiScript = GetComponent<ExtendArtLabel>();
         triggerManager = funcTrigger.GetComponent<FuncTriggerManager>();
-        isClicked = false;
-        isQpressed = false;
+        isClicked = false; 
         isFunctionActive = false;
     }
 
