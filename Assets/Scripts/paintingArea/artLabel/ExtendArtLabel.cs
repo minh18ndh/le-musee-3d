@@ -7,9 +7,12 @@ public class ExtendArtLabel : MonoBehaviour
     [SerializeField] private GameObject infoPanel;
     private ExtendArtLabelButtonClickHandler aiButton;
 
+    private Vector3 infoPanelOriginalPos;
+
     void Start()
     {
         aiButton = GetComponent<ExtendArtLabelButtonClickHandler>();
+        infoPanelOriginalPos = infoPanel.transform.position;
     }
 
     public void ExecuteFunction()
@@ -21,6 +24,7 @@ public class ExtendArtLabel : MonoBehaviour
 
     public void HaltFunction()
     {
+        infoPanel.transform.position = infoPanelOriginalPos;
         infoPanel.SetActive(false);
         aiButton.FunctionActiveState(false);
         UIManager.Instance.ShowNotification("ArtInfo deactivated.");
