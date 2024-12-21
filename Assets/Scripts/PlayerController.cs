@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float pitchSpeed = .05f;          // Rotation speed for up/down (camera)
     private float pitch = 0f;                // Track camera pitch (up/down)
 
-    public Transform head;   
+    public Transform eyes;                   // Reference to camera
     
     public float bobSpeed = 10f;
     public float bobAmount = .08f;
@@ -20,11 +20,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private AudioSource footsteps;
 
+    public float zoomSpeed = 20f;   
+    public float minZoom = 10f;             // Min FoV for zoom in
+    public float maxZoom = 80f;             // Max FoV for zoom out
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>(); 
         footsteps = GetComponent<AudioSource>();
-        headOriginalPos = head.localPosition;
+        headOriginalPos = eyes.localPosition;
     }
 
     private void Update()
@@ -36,7 +40,9 @@ public class PlayerController : MonoBehaviour
         View();
         
         HeadBob();
-        
+
+        Zoom();
+
         Footsteps();
         
     }
@@ -87,7 +93,7 @@ public class PlayerController : MonoBehaviour
             pitch -= rotateX;
             pitch = Mathf.Clamp(pitch, -50f, 40f);  // Limit up/down rotation to avoid flipping
 
-            head.localRotation = Quaternion.Euler(pitch, 0, 0);
+            eyes.localRotation = Quaternion.Euler(pitch, 0, 0);
         }
     }
     
@@ -98,23 +104,23 @@ public class PlayerController : MonoBehaviour
             if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && onFoot)  // Horizontal-plane movement detected and contact with ground
             {
                 timer += Time.deltaTime * bobSpeed;
-       
+
                 // Apply HeadBob movement
-                head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y + Mathf.Sin(timer) * bobAmount, headOriginalPos.z);
+                eyes.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y + Mathf.Sin(timer) * bobAmount, headOriginalPos.z);
             }
             else  // Return to original head position when stand still
             {
-                if (head.localPosition.y == headOriginalPos.y)
+                if (eyes.localPosition.y == headOriginalPos.y)
                 {
-                    head.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y, headOriginalPos.z);
+                    eyes.localPosition = new Vector3(headOriginalPos.x, headOriginalPos.y, headOriginalPos.z);
                 }
                 else
                 {
                     // Gradually return to headOriginalPos.y
-                    float smoothSpeed = 2f; 
-                    head.localPosition = new Vector3(
+                    float smoothSpeed = 2f;
+                    eyes.localPosition = new Vector3(
                         headOriginalPos.x,
-                        Mathf.Lerp(head.localPosition.y, headOriginalPos.y, Time.deltaTime * smoothSpeed),
+                        Mathf.Lerp(eyes.localPosition.y, headOriginalPos.y, Time.deltaTime * smoothSpeed),
                         headOriginalPos.z);
                 }
             }
@@ -124,7 +130,20 @@ public class PlayerController : MonoBehaviour
             timer = 0;
         }
     }
-    
+
+    private void Zoom()
+    {
+        Camera camera = eyes.GetComponent<Camera>();
+        if (camera != null)
+        {
+            float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+
+            // Adjust camera FoV based on scroll input
+            camera.fieldOfView += scrollInput * zoomSpeed;
+            camera.fieldOfView = Mathf.Clamp(camera.fieldOfView, minZoom, maxZoom);
+        }
+    }
+
     private void Footsteps()
     {
         if (!verticalMovement)  // Jump => no footsteps

@@ -790,9 +790,12 @@ MonoBehaviour:
   flySpeed: 10
   rotationSpeed: 0.05
   pitchSpeed: 0.05
-  head: {fileID: 994899998}
+  eyes: {fileID: 994899998}
   bobSpeed: 10
   bobAmount: 0.08
+  zoomSpeed: 20
+  minZoom: 10
+  maxZoom: 80
 --- !u!82 &214312977
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3082,7 +3085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 266592185712206242, guid: 06dc00831b466e3458c56124c84c3557, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 71.15
+      value: 78.17
       objectReference: {fileID: 0}
     - target: {fileID: 266592185712206242, guid: 06dc00831b466e3458c56124c84c3557, type: 3}
       propertyPath: m_LocalPosition.z
