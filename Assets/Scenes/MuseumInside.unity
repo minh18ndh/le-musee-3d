@@ -4601,6 +4601,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.461
       objectReference: {fileID: 0}
+    - target: {fileID: 3906499527241086519, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: hostedFilePath
+      value: https://drive.google.com/file/d/1D0cFyz5XcgfHlVSaHIFh3D7b09xjeDQX/view?usp=sharing
+      objectReference: {fileID: 0}
     - target: {fileID: 4328216291654528114, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: playerCamera
       value: 
