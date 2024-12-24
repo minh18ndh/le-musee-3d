@@ -1916,6 +1916,15 @@ PrefabInstance:
       propertyPath: m_text
       value: "Artwork: Nude\n\nArtist: L\xEA Ph\u1ED5\n\nLocation: Private collection\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 5357318401902264114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_text
+      value: "L\xEA Ph\u1ED5: \"Nude\"\n \r\nL\xEA Ph\u1ED5, one of Vietnam\u2019s
+        most renowned modern artists, created \"Nude\" as a delicate yet bold exploration
+        of the human form. With a graceful interplay of soft tones and flowing lines,
+        the painting blends traditional Vietnamese aesthetics with Western influences.
+        \"Nude\" captures both vulnerability and elegance, offering a timeless reflection
+        on beauty and femininity.\r\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
       value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/Nude.mp4
@@ -3629,6 +3638,16 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 5357318401902264114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_text
+      value: "Leonardo da Vinci: \"Salvator Mundi\"\n\n\"Salvator Mundi\" (circa
+        1500) is a masterpiece by the legendary Renaissance artist Leonardo da Vinci.
+        Depicting Christ as the Savior of the World, the painting shows him holding
+        a crystal orb symbolizing the heavens, while his right hand offers a blessing.
+        Known for its ethereal detail and enigmatic expression, the work exemplifies
+        Leonardo\u2019s unmatched ability to blend realism with divine symbolism,
+        captivating audiences for centuries.\r"
+      objectReference: {fileID: 0}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
       value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/Salvator
@@ -4177,6 +4196,15 @@ PrefabInstance:
       propertyPath: m_lineSpacing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5357318401902264114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_text
+      value: "Edvard Munch: \"The Scream\"  \r\n\n\"The Scream\" (1893) by Norwegian
+        artist Edvard Munch is one of the most iconic works in art history. It depicts
+        a figure on a bridge, overwhelmed by existential dread, against a dramatic,
+        swirling sky. With bold colors and distorted forms, Munch conveys raw emotion
+        and psychological anguish, making \"The Scream\" a powerful symbol of modern
+        human anxiety.\r\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
       value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/The
@@ -4721,6 +4749,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 994899997}
+    - target: {fileID: 2106171409859147202, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899997}
     - target: {fileID: 3845919931547218195, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.8
@@ -4750,6 +4782,16 @@ PrefabInstance:
       propertyPath: m_Url
       value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/Seated
         Cupid.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994418635425354157, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: m_text
+      value: "\xC9tienne Maurice Falconet: \"Seated Cupid\"\n\n\"Seated Cupid\" (1757)
+        by French sculptor \xC9tienne Maurice Falconet portrays the Roman god of
+        love in a relaxed yet mischievous pose. Crafted in the Rococo style, the
+        marble statue radiates charm and playfulness, with Cupid holding an arrow
+        to symbolize love\u2019s power. Falconet\u2019s exquisite detailing and delicate
+        composition make this sculpture a beloved embodiment of romantic ideals and
+        artistic elegance.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8220349567956259758, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_Name
@@ -4918,6 +4960,16 @@ PrefabInstance:
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_fontStyle
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357318401902264114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_text
+      value: "Claude Monet: \"Nymph\xE9as en Fleur\"\n\n\"Nymph\xE9as en Fleur\"
+        (Water Lilies in Bloom) is part of Claude Monet\u2019s iconic water lily
+        series, painted in the early 20th century. A celebration of nature\u2019s
+        beauty, the work captures Monet\u2019s lush garden in Giverny through dreamy
+        brushstrokes and vibrant hues. The painting immerses viewers in a serene
+        and almost otherworldly landscape, embodying Monet\u2019s impressionist vision
+        of light, reflection, and tranquility.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
@@ -7051,6 +7103,16 @@ PrefabInstance:
       value: "Artwork: Portrait de Mademoiselle Phuong\n\nArtist: Mai Trung Th\u1EE9\n\nLocation:
         Private collection\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 5357318401902264114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_text
+      value: "Mai Trung Th\u1EE9: \"Portrait of Mademoiselle Ph\u01B0\u01A1ng\"\n\r\nPainted
+        by Vietnamese artist Mai Trung Th\u1EE9 in 1930, \"Portrait of Mademoiselle
+        Ph\u01B0\u01A1ng\" captures the elegance and grace of a young Vietnamese
+        woman. The work reflects Mai Trung Th\u1EE9\u2019s signature style, blending
+        traditional Vietnamese aesthetics with European techniques. This portrait,
+        celebrated for its delicate brushwork and rich cultural essence, highlights
+        the beauty of femininity and identity during a transformative era.\r"
+      objectReference: {fileID: 0}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
       value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/Portrait
@@ -7601,6 +7663,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 912966469347696083, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1133807937862645897, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: filterTypes.Array.size
       value: 7
@@ -7645,6 +7711,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 72a439dffd926f749bfd09dd39b33690, type: 2}
+    - target: {fileID: 3396871687157557099, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3845919931547218195, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalScale.y
       value: 2.1
@@ -7713,6 +7783,17 @@ PrefabInstance:
         Location: Private collection
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357318401902264114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_text
+      value: "David Hockney: \"Pool with Two Figures\"\r\n\nDavid Hockney, one of
+        Britain\u2019s most celebrated contemporary artists, is known for his vibrant
+        exploration of color, light, and space. \"Pool with Two Figures\" (1972)
+        is a masterpiece that captures a serene yet enigmatic moment by a swimming
+        pool. The painting juxtaposes the stillness of the water with the intensity
+        of a figure gazing into it, while another stands on the poolside, creating
+        a sense of curiosity and narrative. Hockney\u2019s work invites viewers to
+        ponder relationships and the interplay between nature and human presence.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 5374025154507095768, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_IsActive
@@ -8061,6 +8142,15 @@ PrefabInstance:
         Private collection
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357318401902264114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_text
+      value: "Willem de Kooning: \"Interchange\"\n\n\"Interchange\" (1955) by Willem
+        de Kooning is a landmark in abstract expressionism. Known for its dynamic
+        composition and vibrant colors, the painting explores the fluid relationship
+        between form and emotion. De Kooning\u2019s energetic brushstrokes create
+        a sense of movement and raw intensity, inviting viewers to experience art
+        as a deeply personal and interpretative journey.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
@@ -8585,6 +8675,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 994899997}
+    - target: {fileID: 2106171409859147202, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 994899997}
     - target: {fileID: 3906499527241086519, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: hostedFilePath
       value: https://drive.google.com/file/d/1RUpDQ7BLKcvZ7AJc7OMlmxzbP1wmruJC/view?usp=sharing
@@ -8606,6 +8700,16 @@ PrefabInstance:
       propertyPath: m_Url
       value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/The
         Thinker.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994418635425354157, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: m_text
+      value: "Auguste Rodin: \"The Thinker\"\n\n\"The Thinker\" (1880) by French
+        sculptor Auguste Rodin is a symbol of intellectual contemplation and human
+        creativity. Originally conceived as part of Rodin\u2019s larger work \"The
+        Gates of Hell\", the sculpture depicts a solitary figure seated with his
+        hand on his chin, deep in thought. Its muscular form and intense expression
+        capture the tension between action and reflection, making it a timeless representation
+        of philosophical inquiry.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8220349567956259758, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_Name
@@ -9306,6 +9410,15 @@ PrefabInstance:
     - target: {fileID: 5185976234957666211, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357318401902264114, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_text
+      value: "Roy Lichtenstein: \"Masterpiece\" \n\r\n\"Masterpiece\" (1962) by Roy
+        Lichtenstein is a witty and vibrant work that exemplifies the Pop Art movement.
+        Using comic book-inspired imagery and Ben-Day dots, the painting humorously
+        comments on art, fame, and success. The dialogue bubble, \"Why, Brad darling,
+        this painting is a masterpiece!\" adds a playful narrative, showcasing Lichtenstein\u2019s
+        ability to transform everyday visuals into high art.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 5546801713610471909, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_Url
