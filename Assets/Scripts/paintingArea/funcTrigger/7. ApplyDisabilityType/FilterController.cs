@@ -116,8 +116,8 @@ public class FilterController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Alpha7))
             {
                 SetFilter(6);
-                UIManager.Instance.ShowNotification("Protanopia mode.");
-                Debug.Log("Protanopia mode.");
+                UIManager.Instance.ShowNotification("Van Gogh style.");
+                Debug.Log("Van Gogh style.");
             }
         }
     }
