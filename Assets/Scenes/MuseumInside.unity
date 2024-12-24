@@ -4706,6 +4706,11 @@ PrefabInstance:
       value: "Artwork: Seated Cupid\n\nArtist: \xC9tienne Maurice Falconet\n\nLocation:
         Rijksmuseum - Amsterdam, Netherlands\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 5546801713610471909, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: m_Url
+      value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/Seated
+        Cupid.mp4
+      objectReference: {fileID: 0}
     - target: {fileID: 8220349567956259758, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_Name
       value: SeatedCupid
@@ -8508,6 +8513,11 @@ PrefabInstance:
       propertyPath: m_text
       value: "Artwork: The Thinker\n\nArtist: Auguste Rodin\n\nLocation: Mus\xE9e
         Rodin - Paris, France\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546801713610471909, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: m_Url
+      value: https://minh18ndhlemusee.blob.core.windows.net/lemusee-artvideos/The
+        Thinker.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 8220349567956259758, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_Name
