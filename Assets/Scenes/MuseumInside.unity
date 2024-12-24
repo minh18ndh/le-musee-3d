@@ -1943,13 +1943,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: bfbf11f80dbe15741a7bbde9d2967bc8, type: 3}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c0eab276fade0c249a4c2fbbbcc55186, type: 3}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_text
       value: "Artwork: Nude\n\nArtist: L\xEA Ph\u1ED5\n\nLocation: Private collection\n"
@@ -3660,13 +3696,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a3f653e904d904442a48229eddc2d404, type: 3}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 0f5633a11012ba043aa9207628e14177, type: 3}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_text
       value: 'Artwork: Salvator Mundi
@@ -4324,13 +4396,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 22060e3f669009a4db5c458f5b39d3cc, type: 3}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 487c1ad5d8f4645479378f3060348a1f, type: 3}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_text
       value: 'Artwork: The Scream
@@ -4922,13 +5030,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 619f8d66af0e8e8429790f097fd30d58, type: 3}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d62c90d6e17f0eb40865f52c03577927, type: 3}
+    - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_text
       value: "Artwork: Seated Cupid\n\nArtist: \xC9tienne Maurice Falconet\n\nLocation:
@@ -5180,13 +5320,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: fbd465931e64d924e9515b73d5e7ea2a, type: 3}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a58b1e131653c6d4b911d2cbca51c0dd, type: 3}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_text
       value: "Artwork: Nymph\xE9as en fleur\n\nArtist: Claude Monet\n\nLocation:
@@ -7197,13 +7373,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5fc9202248448d5469eeb4c9d400ee91, type: 3}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 01b6d7f8d17318b41839a109f79bbafb, type: 3}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_text
       value: "Artwork: Portrait de Mademoiselle Phuong\n\nArtist: Mai Trung Th\u1EE9\n\nLocation:
@@ -7862,20 +8074,56 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 341e40637104ac24ab00dd2059ce7bc2, type: 3}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 85f29f1dc213d7548aa549d6882e26d4, type: 3}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_text
@@ -8233,13 +8481,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 4af3a620adbcf1f44bd7de523499213e, type: 3}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 3523ecc8e41f9724b9bf086675e0c898, type: 3}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_text
       value: 'Artwork: Interchange
@@ -8873,13 +9157,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 994899998}
     - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7935109e8dd53524fa46e35dc5fa37f2, type: 3}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a9460fa7c72421f488fa3747fecd6f75, type: 3}
+    - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: e241885a5192fc3478fe9b9256ad1c9b, type: 3}
       propertyPath: m_text
       value: "Artwork: The Thinker\n\nArtist: Auguste Rodin\n\nLocation: Mus\xE9e
@@ -9792,13 +10112,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 3d4e00638179d104484a09adabeca21d, type: 3}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4413320259493657409, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: MinDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: b026c4c47450a1f42877750c7f332692, type: 3}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597150843113552650, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4618279470789126122, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: m_text
       value: 'Artwork: Masterpiece
