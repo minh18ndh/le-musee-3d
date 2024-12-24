@@ -50,8 +50,11 @@ public class UIManager : MonoBehaviour
     {
         if (notificationPanel != null)
         {
+            CancelInvoke(nameof(HideNotification));
+
             notificationPanel.SetActive(true);
             notificationText.text = notiText;
+
             Invoke(nameof(HideNotification), notificationDuration);
         }
     }

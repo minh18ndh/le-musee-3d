@@ -13,7 +13,7 @@ public class InteractWithSculpture : MonoBehaviour
 
     public void ExecuteFunction()
     {
-        UIManager.Instance.ShowNotification("InteractWithSculpture activated.");
+        UIManager.Instance.ShowNotification("Function not available. Coming soon...");
         Debug.Log("InteractWithSculpture activated.");
     }
 
