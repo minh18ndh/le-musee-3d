@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-
+using UnityEngine.UI; // Thêm namespace để dùng Slider
 
 public class UIManager : MonoBehaviour
 {
@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
 
     public AudioSource backgroundMusicSource;
     public AudioClip[] musicFiles;          // Array to hold music pieces
+
+    public Slider volumeSlider;             // Slider for adjusting volume
 
     public GameObject[] lightObjects;
     private Light[] lights;
@@ -43,6 +45,13 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < lightObjects.Length; i++)
         {
             lights[i] = lightObjects[i].GetComponentInChildren<Light>();
+        }
+
+        // Set initial volume value if the slider is assigned
+        if (volumeSlider != null && backgroundMusicSource != null)
+        {
+            volumeSlider.value = backgroundMusicSource.volume;
+            volumeSlider.onValueChanged.AddListener(SetVolume);
         }
     }
 
@@ -76,16 +85,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    /*public void ShowColorBlindnessOption()
-    {
-        colorBlindnessOption.SetActive(true);
-    }
-
-    public void HideColorBlindnessOption()
-    {
-        colorBlindnessOption.SetActive(false);
-    }*/
-
     public void PlayBackgroundMusic(int musicIndex)
     {
         if (backgroundMusicSource != null && musicFiles != null && musicIndex >= 0 && musicIndex < musicFiles.Length)
@@ -101,14 +100,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void PauseBackgroundMusic()
+    public void TogglePlayPauseMusic()
     {
-        backgroundMusicSource.Pause();
-    }
-
-    public void ResumeBackgroundMusic()
-    {
-        backgroundMusicSource.Play();
+        if (backgroundMusicSource != null)
+        {
+            if (backgroundMusicSource.isPlaying)
+            {
+                backgroundMusicSource.Pause(); // Nếu đang phát, tạm dừng
+            }
+            else
+            {
+                backgroundMusicSource.Play(); // Nếu đang tạm dừng, phát nhạc
+            }
+        }
     }
 
     public void Mode1()
@@ -172,4 +176,50 @@ public class UIManager : MonoBehaviour
             discoCoroutine = null;
         }
     }
+
+    // Function to set the volume based on slider value
+    public void SetVolume(float volume)
+    {
+        if (backgroundMusicSource != null)
+        {
+            backgroundMusicSource.volume = volume;
+        }
+    }
+    public GameObject popupPanel1; // Popup UI panel chứa hình ảnh và nút
+
+    public void ShowPopup1()
+    {
+        if (popupPanel1 != null)
+        {
+            popupPanel1.SetActive(true); // Hiển thị popup
+        }
+    }
+
+    public void HidePopup1()
+    {
+        if (popupPanel1 != null)
+        {
+            popupPanel1.SetActive(false); // Ẩn popup, quay lại màn hình chính
+        }
+    }
+
+
+    public GameObject popupPanel2; // Popup UI panel chứa hình ảnh và nút
+
+    public void ShowPopup2()
+    {
+        if (popupPanel2 != null)
+        {
+            popupPanel2.SetActive(true); // Hiển thị popup
+        }
+    }
+
+    public void HidePopup2()
+    {
+        if (popupPanel2 != null)
+        {
+            popupPanel2.SetActive(false); // Ẩn popup, quay lại màn hình chính
+        }
+    }
+
 }
