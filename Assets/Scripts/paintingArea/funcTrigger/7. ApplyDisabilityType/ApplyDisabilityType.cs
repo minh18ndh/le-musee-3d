@@ -19,7 +19,6 @@ public class ApplyDisabilityType : MonoBehaviour
     {
         filteredCanvas.SetActive(true);
         filterController.SetQState(false);
-        //UIManager.Instance.ShowColorBlindnessOption();
         UIManager.Instance.ShowNotification("ApplyDisabilityTypes activated.");
         Debug.Log("ApplyDisabilityTypes activated.");
     }
@@ -33,7 +32,6 @@ public class ApplyDisabilityType : MonoBehaviour
         }
    
         adtButton.FunctionActiveState(false);
-        //UIManager.Instance.HideColorBlindnessOption();
         UIManager.Instance.ShowNotification("ApplyDisabilityTypes deactivated.");
         Debug.Log("ApplyDisabilityTypes deactivated.");
     }

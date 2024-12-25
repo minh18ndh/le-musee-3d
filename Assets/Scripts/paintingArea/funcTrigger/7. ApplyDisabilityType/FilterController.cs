@@ -50,7 +50,7 @@ public class FilterController : MonoBehaviour
         }
     }
 
-    // Call this function from UI button to change texture
+    // Call this function to change texture
     public void SetFilter(int index)
     {
         if (filterTypes != null && index >= 0 && index < filterTypes.Length)
@@ -129,7 +129,6 @@ public class FilterController : MonoBehaviour
 
     public bool IsBlindnessActive()
     {
-
         return adtButton.GetFunctionActiveState();
     }
 

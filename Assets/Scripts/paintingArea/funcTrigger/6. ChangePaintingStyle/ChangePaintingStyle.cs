@@ -19,7 +19,6 @@ public class ChangePaintingStyle : MonoBehaviour
     {
         filteredCanvas.SetActive(true);
         filterController.SetQState(false);
-        //UIManager.Instance.ShowColorBlindnessOption();
         UIManager.Instance.ShowNotification("ChangePaintingStyle activated.");
         Debug.Log("ChangePaintingStyle activated.");
     }
@@ -33,7 +32,6 @@ public class ChangePaintingStyle : MonoBehaviour
         }
 
         cpsButton.FunctionActiveState(false);
-        //UIManager.Instance.HideColorBlindnessOption();
         UIManager.Instance.ShowNotification("ChangePaintingStyle deactivated.");
         Debug.Log("ChangePaintingStyle deactivated.");
     }

@@ -153,8 +153,13 @@ public class FuncTriggerManager : MonoBehaviour
     {
         if (isAnyFunctionActive) return false; // Prevent activation if any another function is active
 
-        isAnyFunctionActive = true;
         return true; // Allow activation
+    }*/
+
+    // Lock interactions when a function is active
+    /*public void FunctionActivated()
+    {
+        isAnyFunctionActive = true;
     }*/
 
     // Unlock interactions when a function ends

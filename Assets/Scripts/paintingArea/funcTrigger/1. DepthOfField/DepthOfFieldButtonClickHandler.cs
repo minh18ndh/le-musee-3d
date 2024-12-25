@@ -42,10 +42,10 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (isFunctionActive)
+        if (isFunctionActive)  // if (!triggerManager.CanActivateFunction())
         {
             UIManager.Instance.ShowNotification("The function is already running.");
-            return;  // If function activation denied (another function is active), ignore the click
+            return;  // If function activation denied (the function is active), ignore the click
         }
 
         isClicked = true;
@@ -67,6 +67,7 @@ public class DepthOfFieldButtonClickHandler : MonoBehaviour
         //    }
         //}
         isFunctionActive = true;
+        //triggerManager.FunctionActivated(); // Notify manager to lock for interactions
         isClicked = false;
     }
 

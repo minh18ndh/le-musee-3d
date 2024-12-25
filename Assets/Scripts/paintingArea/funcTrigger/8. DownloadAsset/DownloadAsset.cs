@@ -3,7 +3,6 @@ using System.IO;
 
 public class DownloadAsset : MonoBehaviour
 {
-    // Hosted file path
     public string hostedFilePath;
 
     public void ExecuteFunction()
