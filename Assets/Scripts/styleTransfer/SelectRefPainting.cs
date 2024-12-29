@@ -5,8 +5,9 @@ using UnityEngine.Networking;
 public class SelectRefPainting : MonoBehaviour
 {
     public GameObject targetObject;
-    private string[] paintingPaths; // Array to hold painting file paths (local)
-    private int currentIndex = 0;   // Current selected painting index
+    private string[] paintingURLs;    // Array to hold painting file paths
+    private string[] paintingPaths;   // Array to hold painting file paths (local)
+    private int currentIndex = 0;     // Current selected painting index
 
     private Vector3 originalScale;
 
@@ -21,6 +22,14 @@ public class SelectRefPainting : MonoBehaviour
         {
             Debug.LogError("Target object is not assigned.");
         }
+
+        paintingURLs = new[]
+        {
+            "https://minh18ndhlemusee.blob.core.windows.net/lemusee-artfiles/PoolwithTwoFigures.jpg",
+            "https://minh18ndhlemusee.blob.core.windows.net/lemusee-artfiles/NympheasenFleur.jpg",
+            "https://minh18ndhlemusee.blob.core.windows.net/lemusee-artfiles/SalvatorMundi.jpg",
+            "https://minh18ndhlemusee.blob.core.windows.net/lemusee-artfiles/TheScream.jpg"
+        };
 
         // Initialize the paths to the paintings (relative to StreamingAssets)
         paintingPaths = new[]
@@ -47,6 +56,11 @@ public class SelectRefPainting : MonoBehaviour
 
         UIManager.Instance.ShowNotification("SelectRefPainting");
         Debug.Log($"SelectRefPainting executed. Current painting: {paintingPaths[currentIndex]}");
+    }
+
+    public string GetCurrentRefPaintingURL()
+    {
+        return paintingURLs[currentIndex];
     }
 
     private IEnumerator DisplayPainting(string paintingPath)

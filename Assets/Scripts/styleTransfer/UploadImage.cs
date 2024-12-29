@@ -5,6 +5,8 @@ public class UploadImage : MonoBehaviour
     public GameObject targetObject; // Assign the 3D object (e.g., a plane)
     private Vector3 originalScale;
 
+    private string uploadedImageUrl; // Store the uploaded image URL in the desired format
+
     void Start()
     {
         originalScale = targetObject.transform.localScale;
@@ -22,10 +24,13 @@ public class UploadImage : MonoBehaviour
                 if (file) {
                     var reader = new FileReader();
                     reader.onload = function (e) {
-                        var imagePath = e.target.result;
-                        SendMessage('" + gameObject.name + @"', 'OnImageUploaded', imagePath);
+                        var base64Data = e.target.result.split(',')[1]; // Extract base64 data
+                        var mimeType = file.type; // Get MIME type (e.g., image/jpeg)
+                        var fileName = file.name; // Get file name
+                        var dataUri = `data:${mimeType};name=${fileName};base64,${base64Data}`;
+                        SendMessage('" + gameObject.name + @"', 'OnImageUploaded', dataUri);
                     };
-                    reader.readAsDataURL(file);
+                    reader.readAsDataURL(file); // Read file as Data URL
                 }
             };
 
@@ -41,12 +46,15 @@ public class UploadImage : MonoBehaviour
     }
 
     // Callback to handle the uploaded image
-    public void OnImageUploaded(string base64Image)
+    public void OnImageUploaded(string dataUri)
     {
         Debug.Log("Image uploaded and received in Unity.");
 
-        // Remove the "data:image/png;base64," or similar prefix from the base64 string
-        string base64Data = base64Image.Substring(base64Image.IndexOf(",") + 1);
+        // Store the data URI in the desired format
+        uploadedImageUrl = dataUri;
+
+        // Extract the base64 data from the data URI
+        string base64Data = dataUri.Substring(dataUri.IndexOf(",") + 1);
 
         // Convert the base64 string to a byte array
         byte[] imageBytes = System.Convert.FromBase64String(base64Data);
@@ -75,6 +83,8 @@ public class UploadImage : MonoBehaviour
         {
             Debug.LogError("Target object is not assigned.");
         }
+
+        Debug.Log($"Uploaded Image URL: {uploadedImageUrl}");
     }
 
     // Adjust the object's scale to match the aspect ratio of the texture
@@ -98,6 +108,12 @@ public class UploadImage : MonoBehaviour
             obj.transform.localScale = new Vector3(scale.y, scale.y / aspectRatio, scale.z);
         }
 
-        // Debug.Log($"Adjusted object scale to match aspect ratio: {aspectRatio}");
+        Debug.Log($"Adjusted object scale to match aspect ratio: {aspectRatio}");
+    }
+
+    // Public method to return the uploaded image URL
+    public string GetUploadedImageUrl()
+    {
+        return uploadedImageUrl;
     }
 }
