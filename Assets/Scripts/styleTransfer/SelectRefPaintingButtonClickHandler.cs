@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class SelectRefPaintingButtonClickHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private SelectRefPainting srpScript;
+    private bool isClicked;
+
     void Start()
     {
-        
+        srpScript = GetComponent<SelectRefPainting>();
+        isClicked = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseDown()
     {
-        
+        isClicked = true;
+    }
+
+    void OnMouseUp()
+    {
+        if (isClicked && srpScript != null)
+        {
+            srpScript.ExecuteFunction();
+        }
+
+        isClicked = false;
     }
 }

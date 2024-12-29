@@ -15,4 +15,10 @@ public class UploadImage : MonoBehaviour
     {
         
     }
+
+    public void ExecuteFunction()
+    {
+        UIManager.Instance.ShowNotification("UploadImage");
+        Debug.Log("UploadImage executed.");
+    }
 }

@@ -15,4 +15,10 @@ public class SelectRefPainting : MonoBehaviour
     {
         
     }
+
+    public void ExecuteFunction()
+    {
+        UIManager.Instance.ShowNotification("SelectRefPainting");
+        Debug.Log("SelectRefPainting executed.");
+    }
 }

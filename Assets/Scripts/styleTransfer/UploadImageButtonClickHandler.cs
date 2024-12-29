@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class UploadImageButtonClickHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private UploadImage uiScript;
+    private bool isClicked;
+
     void Start()
     {
-        
+        uiScript = GetComponent<UploadImage>();
+        isClicked = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseDown()
     {
-        
+        isClicked = true;
+    }
+
+    void OnMouseUp()
+    {
+        if (isClicked && uiScript != null)
+        {
+            uiScript.ExecuteFunction();
+        }
+
+        isClicked = false;
     }
 }

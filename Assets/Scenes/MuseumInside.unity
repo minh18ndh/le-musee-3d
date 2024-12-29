@@ -6874,7 +6874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cf42dc26e0455ec42b81f4eee9145df3, type: 3}
       propertyPath: m_Name
-      value: TV
+      value: StyleTransferTV
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
