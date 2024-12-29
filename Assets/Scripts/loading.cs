@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class loading : MonoBehaviour
+public class Loading : MonoBehaviour
 {
     [SerializeField] private GameObject loadingBg;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Loading());
+        StartCoroutine(Load());
     }
 
     void Update()
@@ -18,7 +18,7 @@ public class loading : MonoBehaviour
     }
 
     // Update is called once per frame
-    private IEnumerator Loading()
+    private IEnumerator Load()
     {
         yield return new WaitForSeconds(3);
         Destroy(loadingBg);

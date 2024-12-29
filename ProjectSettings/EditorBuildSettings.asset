@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/waitScene.unity
+    path: Assets/Scenes/WaitScene.unity
     guid: 69828412788734d6ab059bad95220aaa
   - enabled: 1
     path: Assets/Scenes/MuseumInside.unity
