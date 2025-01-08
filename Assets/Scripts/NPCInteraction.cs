@@ -7,6 +7,7 @@ public class NPCInteraction : MonoBehaviour
     public GameObject textBox;
     public float floatSpeed = 2f;
     public float floatAmount = 0.2f;
+    public AudioSource audioSource;
 
     private Vector3 originalPosition;
     private bool playerNearby = false;
@@ -18,7 +19,6 @@ public class NPCInteraction : MonoBehaviour
             textBox.SetActive(false);
             originalPosition = textBox.transform.localPosition;
         }
-        Debug.Log("NPCInteraction script initialized.");
     }
 
     void Update()
@@ -37,7 +37,8 @@ public class NPCInteraction : MonoBehaviour
             playerNearby = true;
             if (textBox != null)
                 textBox.SetActive(true);
-            Debug.Log("Player entered NPC trigger area.");
+            if (audioSource != null && !audioSource.isPlaying)
+                audioSource.Play();
         }
     }
 
@@ -51,7 +52,8 @@ public class NPCInteraction : MonoBehaviour
                 textBox.SetActive(false);
                 textBox.transform.localPosition = originalPosition;
             }
-            Debug.Log("Player exited NPC trigger area.");
+            if (audioSource != null && audioSource.isPlaying)
+                audioSource.Stop();
         }
     }
 }
