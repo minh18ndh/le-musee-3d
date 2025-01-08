@@ -8789,6 +8789,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.76
       objectReference: {fileID: 0}
+    - target: {fileID: 6911556098994438172, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2008088
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911556098994438172, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Size.z
+      value: 3.9346259
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911556098994438172, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Center.x
+      value: 0.10040417
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911556098994438172, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Center.y
+      value: -0.000000021226507
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911556098994438172, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
+      propertyPath: m_Center.z
+      value: 1.5137293
+      objectReference: {fileID: 0}
     - target: {fileID: 7806660137765860106, guid: 962a682a8903af64d9f75bc6c30ff716, type: 3}
       propertyPath: playerCamera
       value: 
