@@ -634,6 +634,7 @@ GameObject:
   - component: {fileID: 214312978}
   - component: {fileID: 214312975}
   - component: {fileID: 214312976}
+  - component: {fileID: 214312979}
   - component: {fileID: 214312977}
   m_Layer: 0
   m_Name: Player
@@ -900,6 +901,20 @@ CapsuleCollider:
   m_Height: 1.65
   m_Direction: 1
   m_Center: {x: 0, y: -0.2, z: 0}
+--- !u!114 &214312979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214312970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c265223245c34434587dc98da3f1daf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  rotateSpeed: 20
 --- !u!1 &223424949
 GameObject:
   m_ObjectHideFlags: 0
@@ -11288,6 +11303,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   useRealTime: 1
+--- !u!1 &1993550416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993550417}
+  - component: {fileID: 1993550418}
+  m_Layer: 0
+  m_Name: HandGestureConnector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993550417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993550416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5100002, y: -5.58, z: -40.8553}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993550418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993550416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7146efb96f2ab56468aef71678c54039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverUrl: ws://localhost:8765
+  printToConsole: 0
 --- !u!1001 &1999991905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11959,19 +12020,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2425502535189569815, guid: 6f332796dd526804ea8b257d5a87ccd7, type: 3}
       propertyPath: m_Size.x
-      value: 10.517387
+      value: 7.73629
       objectReference: {fileID: 0}
     - target: {fileID: 2425502535189569815, guid: 6f332796dd526804ea8b257d5a87ccd7, type: 3}
       propertyPath: m_Size.z
-      value: 6.56314
+      value: 4.6760263
       objectReference: {fileID: 0}
     - target: {fileID: 2425502535189569815, guid: 6f332796dd526804ea8b257d5a87ccd7, type: 3}
       propertyPath: m_Center.x
-      value: -18.4946
+      value: -17.103859
       objectReference: {fileID: 0}
     - target: {fileID: 2425502535189569815, guid: 6f332796dd526804ea8b257d5a87ccd7, type: 3}
       propertyPath: m_Center.z
-      value: -8.874271
+      value: -8.852278
       objectReference: {fileID: 0}
     - target: {fileID: 2434876757603304094, guid: 6f332796dd526804ea8b257d5a87ccd7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -13535,3 +13596,4 @@ SceneRoots:
   - {fileID: 922627664}
   - {fileID: 744872861}
   - {fileID: 1136358560}
+  - {fileID: 1993550417}

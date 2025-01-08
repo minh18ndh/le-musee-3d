@@ -41,7 +41,8 @@ public class NPCInteraction : MonoBehaviour
                 textBox.SetActive(true);
             if (audioSource != null && !audioSource.isPlaying)
             {
-                animator.speed = 0;
+                if (animator)
+                    animator.speed = 0;
                 audioSource.Play();
             }
         }
@@ -59,7 +60,8 @@ public class NPCInteraction : MonoBehaviour
             }
             if (audioSource != null && audioSource.isPlaying)
             {
-                animator.speed = 1;
+                if (animator)
+                    animator.speed = 1;
                 audioSource.Stop();
             }
         }
