@@ -8,12 +8,14 @@ public class NPCInteraction : MonoBehaviour
     public float floatSpeed = 2f;
     public float floatAmount = 0.2f;
     public AudioSource audioSource;
+    private Animator animator;
 
     private Vector3 originalPosition;
     private bool playerNearby = false;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         if (textBox != null)
         {
             textBox.SetActive(false);
@@ -38,7 +40,10 @@ public class NPCInteraction : MonoBehaviour
             if (textBox != null)
                 textBox.SetActive(true);
             if (audioSource != null && !audioSource.isPlaying)
+            {
+                animator.speed = 0;
                 audioSource.Play();
+            }
         }
     }
 
@@ -53,7 +58,10 @@ public class NPCInteraction : MonoBehaviour
                 textBox.transform.localPosition = originalPosition;
             }
             if (audioSource != null && audioSource.isPlaying)
+            {
+                animator.speed = 1;
                 audioSource.Stop();
+            }
         }
     }
 }
