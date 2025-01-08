@@ -15,6 +15,8 @@ public class StyleTransfer : MonoBehaviour
 
     public string resultImageURL;
 
+    public bool isTransferCompleted;
+
     void Start()
     {
         // Get the required scripts from the assigned GameObjects
@@ -22,6 +24,8 @@ public class StyleTransfer : MonoBehaviour
         srpScript = srpButton.GetComponent<SelectRefPainting>();
 
         targetObject.SetActive(false);
+
+        isTransferCompleted = true;
 
         // Save the original scale of the cube
         if (targetObject != null)
@@ -41,6 +45,9 @@ public class StyleTransfer : MonoBehaviour
             Debug.LogError("UploadImage or SelectRefPainting scripts are not assigned.");
             return;
         }
+
+        UIManager.Instance.ShowNotification("Transferring, please wait...");
+        isTransferCompleted = false;
 
         // Get the uploaded image and reference painting URLs
         string uploadedImageUrl = uiScript.GetUploadedImageUrl();
@@ -80,7 +87,7 @@ public class StyleTransfer : MonoBehaviour
                 method: 'POST',
                 headers: {{
                     accept: 'application/json',
-                    'X-Picsart-API-Key': 'eyJraWQiOiI5NzIxYmUzNi1iMjcwLTQ5ZDUtOTc1Ni05ZDU5N2M4NmIwNTEiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhdXRoLXNlcnZpY2UtYjc5MDJmM2ItOTgxYS00MjJmLTllZjQtYzMyNzgyNmQ4MDMwIiwiYXVkIjoiNDY4OTU1NDgxMDcyMTAxIiwibmJmIjoxNzM1MzUxNTY1LCJzY29wZSI6WyJiMmItYXBpLmdlbl9haSIsImIyYi1hcGkuaW1hZ2VfYXBpIl0sImlzcyI6Imh0dHBzOi8vYXBpLnBpY3NhcnQuY29tL3Rva2VuLXNlcnZpY2UiLCJvd25lcklkIjoiNDY4OTU1NDgxMDcyMTAxIiwiaWF0IjoxNzM1MzUxNTY1LCJqdGkiOiIyNGEwMDZhYy04MjQwLTQzMWYtODQ2YS0xNTVjMjI4Y2I0OTQifQ.RLqXZNszc4boeK3oz3Vru8VLOB-S2fn6WV0q1z5GOBkUT6HTbDE3pvl4WXfERD9pT1KXNOsvl7TlqvgFkxDUs6j8wlrwf7GyhRQyGCMTcNvneCr0NNAnH7tLws6tZ5bT5Zeq4oE_7bCy7O0p-gg4LP9olZ7an62dwTBwM1lLB4UYgHNDGojmMBhVJIkhyBDn0-EAJ79zSAd-z1sISHEFwQuPTTOlRjE1cvighuzdf8G4zewO9q26Z9nlVxAdP6c8euHQHrcMy_OV_7UltEeK_s9uUHOVLD83eS8I7AT8wjI5YM5FebbIq8I0Vpdd9ylu-rMxzTlJPQhE-zgzoqq5Vg' // Replace with your API key
+                    'X-Picsart-API-Key': 'eyJraWQiOiI5NzIxYmUzNi1iMjcwLTQ5ZDUtOTc1Ni05ZDU5N2M4NmIwNTEiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhdXRoLXNlcnZpY2UtZGZhYjFjZjMtZTExNi00NGZlLWI3N2QtYTg4YTc3MzhhNzAzIiwiYXVkIjoiNDc0MDUwMTg2MDEzMTAxIiwibmJmIjoxNzM2MzU0MjM2LCJzY29wZSI6WyJiMmItYXBpLmdlbl9haSIsImIyYi1hcGkuaW1hZ2VfYXBpIl0sImlzcyI6Imh0dHBzOi8vYXBpLnBpY3NhcnQuY29tL3Rva2VuLXNlcnZpY2UiLCJvd25lcklkIjoiNDc0MDUwMTg2MDEzMTAxIiwiaWF0IjoxNzM2MzU0MjM2LCJqdGkiOiI3YzNjMWQ4My00OTk4LTRlOGEtYjQzZS1jZmFjOWM4ZmJiZmMifQ.LGqRMop61GDZ8AESiA99B4qtOXi3o2TvMX9bxFh8dn3FnM8s2S6B7cdWwk9uxwdqksFzyoUKt2ffcVQTSjJ2BcTQKOqYv0kslmkVXdTehbcujPK0kWUKJAOiJtdjPm8dbRLnipnxiEkZxuFy-CZHjs9AYe74JmXSXB0mIBjJ7-8FZsbHkx9FWQlpGGZUzoS6dkMjltgHQcmN0_DaCVfy5bV7spvsxf6vuG7h--ZMOMMNl5sW4nwkNhOXNCDTRHsZZSAJqI_FsERSnhsq1a1e3fzztacyse_zMYer8GD2Dkc7VSYSK3NWyctZmVo4Oys4CwNovPpgD7TOARM0fNxQig'
                 }},
                 body: form
             }};
@@ -110,6 +117,8 @@ public class StyleTransfer : MonoBehaviour
 
         // Start coroutine to download and apply the image
         StartCoroutine(DownloadAndApplyImage(imageUrl));
+        UIManager.Instance.ShowNotification("Style transfer completed!");
+        isTransferCompleted = true;
     }
 
     private IEnumerator DownloadAndApplyImage(string imageUrl)
