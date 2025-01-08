@@ -13,11 +13,15 @@ public class StyleTransfer : MonoBehaviour
 
     private Vector3 originalScale;
 
+    public string resultImageURL;
+
     void Start()
     {
         // Get the required scripts from the assigned GameObjects
         uiScript = uiButton.GetComponent<UploadImage>();
         srpScript = srpButton.GetComponent<SelectRefPainting>();
+
+        targetObject.SetActive(false);
 
         // Save the original scale of the cube
         if (targetObject != null)
@@ -102,6 +106,8 @@ public class StyleTransfer : MonoBehaviour
     {
         Debug.Log($"Style Transfer completed. Image URL: {imageUrl}");
 
+        resultImageURL = imageUrl;
+
         // Start coroutine to download and apply the image
         StartCoroutine(DownloadAndApplyImage(imageUrl));
     }
@@ -116,6 +122,8 @@ public class StyleTransfer : MonoBehaviour
             {
                 // Get the downloaded texture
                 Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+
+                targetObject.SetActive(true);
 
                 // Apply the texture to the target cube's material
                 if (targetObject != null)
