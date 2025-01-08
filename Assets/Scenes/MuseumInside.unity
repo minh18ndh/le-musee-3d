@@ -1289,13 +1289,15 @@ GameObject:
   - component: {fileID: 291264500}
   - component: {fileID: 291264499}
   - component: {fileID: 291264498}
+  - component: {fileID: 291264502}
+  - component: {fileID: 291264501}
   m_Layer: 0
   m_Name: resultImageHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &291264497
 Transform:
   m_ObjectHideFlags: 0
@@ -1305,7 +1307,7 @@ Transform:
   m_GameObject: {fileID: 291264496}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000029802322, y: -0.02020356, z: -0.000000029802322, w: 0.9997959}
-  m_LocalPosition: {x: -0.008230357, y: 0.0001600011, z: -0.0006400616}
+  m_LocalPosition: {x: -0.01022, y: 0.00087, z: -0.00012}
   m_LocalScale: {x: 0.0027, y: 0.0027, z: 0.00001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1382,6 +1384,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291264496}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &291264501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291264496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9683334d766c448ae23b3e43d9def1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  styleTransferButton: {fileID: 2005044897}
+--- !u!114 &291264502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291264496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f706b7b5f6bb13a4fb1af2b3b19e00c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &323021448
 GameObject:
   m_ObjectHideFlags: 0
@@ -11049,6 +11076,7 @@ MonoBehaviour:
   targetObject: {fileID: 291264496}
   uiButton: {fileID: 1883279796}
   srpButton: {fileID: 1077475335}
+  resultImageURL: 
 --- !u!114 &2005044905
 MonoBehaviour:
   m_ObjectHideFlags: 0
