@@ -20,6 +20,8 @@ public class UploadImage : MonoBehaviour
             input.accept = 'image/*';
 
             input.onchange = function (event) {
+                //const file = event.target.files[0]; // First file user uploads
+                //console.log(file); // This is Blob
                 var file = event.target.files[0];
                 if (file) {
                     var reader = new FileReader();
